@@ -2,11 +2,6 @@
 label: About
 hide_body: false
 fields:
-- name: titre
-  type: text
-  config:
-    required: false
-  label: Titre
 - name: adresse
   type: textarea
   default: ''
