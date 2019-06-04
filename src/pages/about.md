@@ -4,7 +4,7 @@ socials:
   facebook: https://www.instagram.com/l.atelier.perche/
   twitter: https://www.instagram.com/l.atelier.perche/
   instagram: https://www.instagram.com/l.atelier.perche/
-adresse: "**L'Atelier Perché**  \n14 Rue du Tertre,   \n61400 Mortagne-au-Perche"
+adresse: "<p><strong>L'Atelier Perché</strong><br>14 Rue du Tertre, <br>61400 Mortagne-au-Perche</p>"
 email: bastien.ruffray@gmail.com
 image: "/src/images/portrait.jpg"
 template: ''
