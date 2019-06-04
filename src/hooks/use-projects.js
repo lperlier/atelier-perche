@@ -13,7 +13,6 @@ const useProjects = () => {
             }
             frontmatter {
               title
-              description
               gallery {
                 childImageSharp {
                   fluid {

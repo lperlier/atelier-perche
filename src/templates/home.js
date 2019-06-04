@@ -8,17 +8,12 @@ import useProjects from 'hooks/use-projects';
 
 function Homepage(props) {
     
-    const page = props.data.pageData.frontmatter;
     const projects = useProjects();
-    
-    console.log(projects);
 
     return (
     
       <main className="HomePage">
         <PageHeader>
-          <h1>{page.title}</h1>
-          <h2>{page.subtitle}</h2>
           
           <div className="ScrollContainer">
             <div className="container">
@@ -40,18 +35,3 @@ function Homepage(props) {
 }
 
 export default Homepage;
-
-export const pageQuery = graphql`
-  query HomePageBySlug($slug: String!) {
-    pageData:markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt
-      html
-      frontmatter {
-        title
-        template
-        subtitle
-      }
-    }
-  }
-`

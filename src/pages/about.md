@@ -1,10 +1,5 @@
 ---
-title: About us
-titre: ''
-twitter: ''
-instagram: ''
-social:
-- template: socials
+title: À Propos
 socials:
   facebook: https://www.instagram.com/l.atelier.perche/
   twitter: https://www.instagram.com/l.atelier.perche/
