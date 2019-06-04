@@ -2,11 +2,6 @@
 label: Projet
 hide_body: false
 fields:
-- name: title
-  type: text
-  config:
-    required: false
-  label: Titre
 - name: template
   type: text
   config:
@@ -14,6 +9,11 @@ fields:
   label: Template
   default: projet
   hidden: true
+- name: title
+  type: text
+  config:
+    required: false
+  label: Titre
 - name: gallery
   type: image_gallery
   config: {}
