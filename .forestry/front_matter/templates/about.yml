@@ -1,4 +1,14 @@
 ---
 label: About
 hide_body: false
-fields: []
+fields:
+- name: titre
+  type: text
+  config:
+    required: false
+  label: Titre
+- name: socials
+  type: include
+  config: {}
+  template: socials
+  label: Socials
