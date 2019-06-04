@@ -16,11 +16,6 @@ sections:
   label: Projets
   create: documents
   match: "**/*"
-- type: heading
-  label: Configuration
-- type: document
-  path: src/data/socials.json
-  label: Socials
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''

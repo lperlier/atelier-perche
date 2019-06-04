@@ -26,5 +26,3 @@ fields:
     required: false
   label: Instagram
   description: Lien Instagram
-pages:
-- src/data/socials.json
