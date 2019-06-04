@@ -2,6 +2,13 @@
 label: About
 hide_body: false
 fields:
+- name: template
+  type: text
+  config:
+    required: true
+  label: Template
+  hidden: true
+  default: about
 - name: image
   type: file
   config:
