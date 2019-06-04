@@ -2,6 +2,13 @@
 label: Socials
 hide_body: true
 fields:
-- type: list
-  name: Socials
-  label: Socials
+- name: nom
+  type: text
+  config:
+    required: true
+  label: Nom
+- name: url
+  type: text
+  config:
+    required: true
+  label: Url
