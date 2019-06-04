@@ -7,6 +7,7 @@ socials:
 adresse: "**L'Atelier Perché**  \n14 Rue du Tertre,   \n61400 Mortagne-au-Perche"
 email: bastien.ruffray@gmail.com
 image: "/src/images/portrait.jpg"
+template: ''
 
 ---
 FESTEN agency was born from a collaboration between Charlotte de Tonnac and Hugo Sauzay after they both graduated in interior design from Camondo School in June 2011. 
