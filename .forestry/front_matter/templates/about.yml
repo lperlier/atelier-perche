@@ -7,7 +7,7 @@ fields:
   default: ''
   config:
     required: false
-    wysiwyg: false
+    wysiwyg: true
     schema:
       format: markdown
   label: Adresse
@@ -15,8 +15,7 @@ fields:
   type: text
   config:
     required: false
-  label: Email
-  description: Email de contact
+  label: Email de contact
 - name: socials
   type: field_group
   config: {}
