@@ -21,7 +21,7 @@ fields:
     required: false
     wysiwyg: true
     schema:
-      format: markdown
+      format: html-blocks
   label: Adresse
 - name: email
   type: text
