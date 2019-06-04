@@ -14,7 +14,7 @@ fields:
   label: Template
   default: projet
   hidden: true
-- name: gallerie
+- name: gallery
   type: image_gallery
   config: {}
   label: Gallerie
