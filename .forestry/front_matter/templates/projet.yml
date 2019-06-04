@@ -1,4 +1,20 @@
 ---
 label: Projet
 hide_body: false
-fields: []
+fields:
+- name: titre
+  type: text
+  config:
+    required: false
+  label: Titre
+- name: template
+  type: text
+  config:
+    required: false
+  label: Template
+  default: projet
+  hidden: true
+- name: gallerie
+  type: image_gallery
+  config: {}
+  label: Gallerie
