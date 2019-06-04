@@ -7,11 +7,41 @@ fields:
   config:
     required: false
   label: Titre
-- name: social
-  type: blocks
-  label: Social
-  template_types:
-  - socials
+- name: adresse
+  type: textarea
+  default: ''
   config:
-    min: 
-    max: 
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Adresse
+- name: email
+  type: text
+  config:
+    required: false
+  label: Email
+  description: Email de contact
+- name: socials
+  type: field_group
+  config: {}
+  fields:
+  - name: facebook
+    type: text
+    config:
+      required: false
+    label: Facebook
+    description: Lien Facebook
+  - name: twitter
+    type: text
+    config:
+      required: false
+    label: Twitter
+    description: Lien Twitter
+  - name: instagram
+    type: text
+    config:
+      required: false
+    label: Instagram
+    description: Lien Instagram
+  label: Socials
