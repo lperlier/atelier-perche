@@ -1,7 +1,10 @@
 ---
+title: Projet Iceland
 template: projet
-title: Mon projet iceland
-gallery:
+description: Mon voyage en Islande avec le dindon
+gallery: []
+titre: Mon projet iceland
+gallerie:
 - "/uploads/iceland_06-1.jpg"
 - "/uploads/iceland_03.jpg"
 - "/uploads/iceland_01.jpg"
