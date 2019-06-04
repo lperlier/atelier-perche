@@ -1,0 +1,37 @@
+@import '~styles/config';
+
+.ToggleMenu {
+   position: relative;
+   background: none;
+   border: none;
+   padding: 10px;
+   z-index:10;
+
+   @include responsive($menuBreakpoint) {
+      display: none;
+   }
+
+   .line {
+      display: block;
+      height: 2px;
+      width: 20px;
+      background: $base;
+      border-radius: 6px;
+      transform-origin:left center;
+      transition:transform 400ms $easeOutQuad;
+
+      &+.line {
+         margin-top: 4px;
+      }
+
+      &:last-child {
+         transform:scaleX(0.6);
+      }
+
+      :global(body.is--MenuOpen) & {
+         @include responsive($menuBreakpoint, max) {
+            background:$white;
+         }
+      }
+   }
+}

@@ -1,0 +1,29 @@
+h1 {
+  @include font-vw(100px, $deskXXL);
+  font-weight:900;
+}
+
+h2 {
+  @include font-vw(50px, $deskXXL);
+  font-weight:900;
+}
+
+h3 {
+  @include font-vw(32px, $deskXXL);
+  font-weight:900;
+}
+
+p {
+  @include font-vw(16px, $deskXXL);
+  line-height:1.6;
+}
+
+em {
+  font-style:italic;
+}
+
+code {
+  background:$grey;
+  padding:0.25em 0.4em;
+  @include rounded(3px);
+}

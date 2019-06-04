@@ -1,0 +1,24 @@
+@import '~styles/config';
+@import '~styles/fonts';
+
+.YSWYWContent {
+  
+  > *+* {
+    margin-top:30px;
+  }
+  
+  ul, ol {
+    @extend p;
+    padding-left:20px;
+    list-style-type: disc;
+  }
+  
+  ol {
+    list-style-type:decimal;
+  }
+  
+  a {
+    color:$linksColor;
+  }
+  
+}

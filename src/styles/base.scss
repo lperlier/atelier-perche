@@ -1,0 +1,56 @@
+@import 'reset';
+@import 'utils';
+@import 'fonts';
+
+body,
+html {
+  min-height: 100vh;
+  background: $base;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.block {
+  width:400px; 
+  height:200px;
+  background:red;
+  margin-right:20px;
+}
+
+body {
+  position: relative;
+  margin:0;
+  font-family: $lato;
+  font-size: 1.3rem;
+  text-size-adjust: 100%;
+  color: $base;
+  
+  html:not(.no-js) &.is-first {
+    visibility: hidden;
+  }
+
+  html:not(.no-js) &.is-loading {
+    overflow: hidden;
+    cursor: progress;
+    height:100vh;
+  }
+  
+  html:not(.no-js) &.is-animating {
+    overflow: hidden;
+    height:100vh;
+  }
+}

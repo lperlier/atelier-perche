@@ -1,0 +1,18 @@
+@import '~styles/config';
+
+:global {
+  @import '~styles/base';
+}
+
+.App {
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  
+  > main, > article {
+    position: relative;
+    z-index:10;
+    min-height: 100vh;
+    background: $white;
+  }
+}

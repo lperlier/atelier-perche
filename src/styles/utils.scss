@@ -1,0 +1,82 @@
+//
+//Effects
+//
+.filter{
+	@include bg();
+	&.black{
+		background-color: rgba(black, 0.55);
+	}
+}
+
+//
+//Misc
+//
+.hide {
+	display: none !important;
+}
+
+.center{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.left {
+	margin-right: auto;
+	text-align: left;
+}
+
+.right{
+	margin-left: auto;
+	text-align: right;
+}
+
+//
+//Lazyload
+//
+html:not(.no-js) .lazyload,
+html:not(.no-js) .lazyloading {
+  opacity: 0;
+}
+
+html.no-js img.sr-only {
+  display:block;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  clip:inherit;
+  object-fit:cover;
+}
+
+.lazyloaded {
+  position: relative;
+  opacity: 1;
+  transition: opacity 400ms linear 400ms;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+	display:block;
+}
+
+input,
+textarea,
+select {
+  &::-webkit-input-placeholder {
+    color: $base;
+  }
+
+  &::-moz-placeholder {
+    opacity: 1;
+    color: $base;
+  }
+
+  &:-ms-input-placeholder {
+    color: $base;
+  }
+}

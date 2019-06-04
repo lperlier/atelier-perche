@@ -1,0 +1,34 @@
+@import '~styles/config';
+
+.Header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  &__container {
+    @include flex();
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
+  &__containerBig {
+    background:red;
+  }
+}
+
+.Brand {
+  display:inline-block;
+  position: relative;
+  z-index: 10;
+
+  svg > * {
+    :global(body.is--MenuOpen) & {
+      @include responsive($menuBreakpoint, max) {
+        fill: $white;
+      }
+    }
+  }
+}

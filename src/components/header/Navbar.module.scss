@@ -1,0 +1,84 @@
+@import '~styles/config';
+
+.Nav {
+
+    @include responsive($menuBreakpoint, max) {
+       @include flex(center, center);
+       position: fixed;
+       top:0; left:0;
+       width:100%;
+       height:100vh;
+       background:$base;
+       color:$white;
+    }
+
+    :global(body:not(.is--MenuOpen)) & {
+       @include responsive($menuBreakpoint, max) {
+          display: none;
+       }
+    }
+
+   &__item {
+     
+       display:block;
+      text-align: center;
+
+      @include responsive($menuBreakpoint) {
+         display: inline-block;
+      }
+
+      & + & {
+         margin-top:20px;
+
+         @include responsive($menuBreakpoint) {
+           margin-top:0;
+            margin-left: 40px;
+         }
+      }
+   }
+
+   &__link {
+      position: relative;
+      opacity:0.3;
+      font-weight:700;
+      transition:opacity 400ms $easeOutQuad;
+      text-transform:uppercase;
+      letter-spacing:0.1em;
+      font-size:2.4rem;
+      color:inherit;
+      text-decoration:none;
+
+      @include responsive($menuBreakpoint) {
+         font-size:1rem;
+      }
+
+      &__Active,
+      &:focus,
+      &:hover {
+         opacity:1;
+         &:after {
+            transform:scaleX(1)!important;
+         }
+      }
+
+      &:after {
+         content:'';
+         display:block;
+         position: absolute;
+         top:100%;
+         left:0;
+         width:100%;
+         height:1px;
+         background: $base;
+         transform:scaleX(0);
+         transform-origin:left center;
+         transition:transform 400ms $easeOutQuad;
+
+         body.showMenu & {
+            @include responsive($menuBreakpoint, max) {
+               background:$white;
+            }
+         }
+      }
+   }
+}
