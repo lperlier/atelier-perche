@@ -2,13 +2,15 @@
 label: Socials
 hide_body: true
 fields:
-- name: nom
+- name: facebook
   type: text
   config:
     required: true
-  label: Nom
-- name: url
+  label: Facebook
+  description: Lien Facebook
+- name: twitter
   type: text
   config:
     required: true
-  label: Url
+  label: Twitter
+  description: Lien Twitter
