@@ -11,13 +11,13 @@ fields:
 - name: facebook
   type: text
   config:
-    required: true
+    required: false
   label: Facebook
   description: Lien Facebook
 - name: twitter
   type: text
   config:
-    required: true
+    required: false
   label: Twitter
   description: Lien Twitter
 - name: instagram
