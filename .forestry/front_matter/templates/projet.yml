@@ -18,3 +18,5 @@ fields:
   type: image_gallery
   config: {}
   label: Gallerie
+pages:
+- src/pages/projets/iceland.md
