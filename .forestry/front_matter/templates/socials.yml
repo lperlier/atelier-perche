@@ -2,6 +2,12 @@
 label: Socials
 hide_body: true
 fields:
+- name: email
+  type: text
+  config:
+    required: false
+  label: Email
+  description: Email de contact
 - name: facebook
   type: text
   config:
@@ -14,3 +20,9 @@ fields:
     required: true
   label: Twitter
   description: Lien Twitter
+- name: instagram
+  type: text
+  config:
+    required: false
+  label: Instagram
+  description: Lien Instagram
