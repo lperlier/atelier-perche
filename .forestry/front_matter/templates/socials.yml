@@ -1,0 +1,7 @@
+---
+label: Socials
+hide_body: true
+fields:
+- type: list
+  name: Socials
+  label: Socials
