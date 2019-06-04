@@ -7,8 +7,11 @@ fields:
   config:
     required: false
   label: Titre
-- name: socials
-  type: include
-  config: {}
-  template: socials
-  label: Socials
+- name: social
+  type: blocks
+  label: Social
+  template_types:
+  - socials
+  config:
+    min: 
+    max: 
