@@ -18,8 +18,6 @@ function About(props) {
     socials : props.data.pageData.frontmatter.socials,
     contact : props.data.pageData.frontmatter.email,
   }
-  
-  console.log(page);
 
   return (
     
@@ -30,7 +28,7 @@ function About(props) {
       <PageContent >
         <YSWYWContent html={page.html}/>
         
-        <address>{page.adresse}</address>
+        <address dangerouslySetInnerHTML={{ __html: page.adresse }} />
         
         <a href="mailto{page.contact}" target="_blank">{page.contact}</a>
         <a href={page.socials.facebook} rel="noopener noreferrer" target="_blank">facebook</a>

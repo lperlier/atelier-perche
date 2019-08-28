@@ -9,12 +9,10 @@ export const Container = ({ children, ...rest }) => {
   if (passProps.className) containerClasses = [s.Container, passProps.className].join(' ');
   
   return (
-    <>
-      <div className={containerClasses}>
-        {children}
-      </div>
-    </>
+    
+    <div className={containerClasses}>
+      {children}
+    </div>
+    
   )
-  
-  
 }

@@ -5,24 +5,15 @@ import { graphql } from 'gatsby'
 
 import { PageHeader } from 'components/page/PageHeader'
 import { PageContent } from 'components/page/PageContent'
-import { YSWYWContent } from 'components/page/YSWYWContent'
 
 function List(props) {
-    
-  const page = {
-    title : props.data.markdownRemark.frontmatter.title,
-    html : props.data.markdownRemark.html
-  }
   
   const childPosts = props.pageContext.children
 
   return (
     
       <main className="Archive">
-        <PageHeader>
-          <h1>{page.title}</h1>
-          <YSWYWContent html={page.html}/>
-        </PageHeader>
+        <PageHeader></PageHeader>
         <PageContent>
           {childPosts.map((child, index) => (
             <article key={index}>

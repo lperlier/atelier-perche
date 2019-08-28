@@ -8,33 +8,32 @@ import s from './AppContainer.module.scss';
 export class AppContainer extends React.Component {
   
   constructor(props) {
+    
     super(props);
-    this.state = { marginBottom : 0 };
-  }
-  
-  getFooterSize = (dimensions) => {
-    this.setState({
-      marginBottom: dimensions.height
-    });
+    this.myIntro = React.createRef();
+    
   }
   
   componentDidMount() {
-    console.log('New App Layout');
+    
+    if (process.env.NODE_ENV === "development") console.log('New App Layout');
+    
     document.body.classList.add('is-first');
     document.body.classList.add('is-loading');
     document.body.classList.add('is-animating');
+    
+    this.myIntro.current.playIntro();
+    
   }
   
   render() {
     
-    const { marginBottom } = this.state;
-    
     return (
       <>
-        <div className={s.App} style={{ marginBottom : marginBottom }}>
+        <div className={s.App}>
           <Header />
           {this.props.children}
-          <Intro />
+          <Intro ref={this.myIntro}/>
         </div>
       </>
     )
