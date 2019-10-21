@@ -1,5 +1,5 @@
 ---
-template: about
+template: contact
 title: À Propos
 socials:
   facebook: https://www.facebook.com/Latelierperch
