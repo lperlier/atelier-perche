@@ -5,14 +5,15 @@ socials:
   facebook: https://www.instagram.com/l.atelier.perche/
   twitter: https://www.instagram.com/l.atelier.perche/
   instagram: https://www.instagram.com/l.atelier.perche/
-adresse: "<p><strong>L'Atelier Perché</strong><br>14 Rue du Tertre, <br>61400 Mortagne-au-Perche</p>"
-email: bastien.ruffray@gmail.com
+adresse: "<p><strong>L'ATELIER PERCHÉ</strong><br>14, rue du Tertre<br>61400 Mortagne-au-Perche</p>"
+email: br@atelierperche.com
 image: "/src/images/portrait.jpg"
 
 ---
-FESTEN agency was born from a collaboration between Charlotte de Tonnac and Hugo Sauzay after they both graduated in interior design from Camondo School in June 2011. 
+### NOTRE MISSION
 
-FESTEN conceives and arranges public and private living spaces as well as scenographic spaces and installations… a variety of universes ranging from places to objects. The context, the original site, the history and the purpose of the place are the starting points for each project Festen undertakes, thus aiming at creating meaningful spaces. 
+Accompagner les particuliers comme les professionnels dans leurs choix de mobilier et d’agencement. C’est ainsi que nous contribuons à la création de lieux de vie toujours plus beaux et confortables.
 
-FESTEN likes to work on the transformation of classical spaces expressed by an enhancement of the original structure, always looking for simplicity and relevance, as well as a bespoke and contemporary understanding of the project.
-o)
+### À VOS MESURES PARTICULIERS COMME PROFESSIONNELS
+
+Nos meubles et agencements ne se limitent pas à ceux présentés ci-après. Nous vous accompagnons dans la conception et la réalisation sur-mesure, en cohérence avec vos besoins, vos délais et votre budget.  Nous mettons un point d’honneur à concevoir des produits haut de gamme, en sélectionnant les plus belles matières premières et en les associant pour former un ensemble harmonieux, fonctionnel et résistant à l’épreuve du temps.
