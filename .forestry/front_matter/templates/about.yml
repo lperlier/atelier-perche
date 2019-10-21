@@ -50,3 +50,5 @@ fields:
     label: Instagram
     description: Lien Instagram
   label: Socials
+pages:
+- src/pages/contact.md
