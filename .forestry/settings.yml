@@ -10,7 +10,7 @@ sections:
   path: src/pages/contact.md
   label: À propos
 - type: document
-  path: src/pages/catalog.md
+  path: src/pages/catalogue.md
   label: Catalogue
 - type: heading
   label: Projets
