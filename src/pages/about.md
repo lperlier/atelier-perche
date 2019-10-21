@@ -2,12 +2,14 @@
 template: about
 title: À Propos
 socials:
-  facebook: https://www.instagram.com/l.atelier.perche/
+  facebook: https://www.facebook.com/Latelierperch
   twitter: https://www.instagram.com/l.atelier.perche/
   instagram: https://www.instagram.com/l.atelier.perche/
 adresse: "<p><strong>L'ATELIER PERCHÉ</strong><br>14, rue du Tertre<br>61400 Mortagne-au-Perche</p>"
 email: br@atelierperche.com
 image: "/src/images/portrait.jpg"
+contact_email: br@atelierperche.com
+contact_email_2: nd@atelierperche.com
 
 ---
 ### NOTRE MISSION
