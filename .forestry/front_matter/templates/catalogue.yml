@@ -1,4 +1,9 @@
 ---
 label: Catalogue
 hide_body: true
-fields: []
+fields:
+- name: catalogue_pdf
+  type: file
+  config:
+    maxSize: 250
+  label: Catalogue
