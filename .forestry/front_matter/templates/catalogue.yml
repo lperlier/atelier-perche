@@ -19,3 +19,5 @@ fields:
   config:
     maxSize: 250
   label: Catalogue
+pages:
+- src/pages/catalog.md
