@@ -9,6 +9,10 @@ sections:
 - type: document
   path: src/pages/contact.md
   label: À propos
+- type: document
+  path: src/pages/catalog.md
+  label: Catalogue
+  match: "**/*"
 - type: heading
   label: Projets
 - type: directory
