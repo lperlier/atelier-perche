@@ -1,6 +1,6 @@
-+++
-catalogue_pdf = ""
-template = "catalogue"
-title = "Catalogue"
+---
+template: catalogue
+catalogue_pdf: ""
+title: Catalogue
 
-+++
+---
