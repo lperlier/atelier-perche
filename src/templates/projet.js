@@ -7,18 +7,16 @@ import { PageHeader } from 'components/page/PageHeader'
 import { PageContent } from 'components/page/PageContent'
 
 function Project(props) {
-    
+
   const project = {
     title : props.data.pageData.frontmatter.title,
     html : props.data.pageData.html,
     description : props.data.pageData.frontmatter.description,
     gallery : props.data.pageData.frontmatter.gallery
   }
-  
-  console.log(project);
 
   return (
-    
+
       <article className="Projet">
         <PageHeader>
           <h1>{project.title}</h1>
@@ -30,9 +28,9 @@ function Project(props) {
           ))}
         </PageContent>
       </article>
-    
+
   );
-  
+
 }
 
 export default Project;

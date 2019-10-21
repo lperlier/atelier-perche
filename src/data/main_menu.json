@@ -6,6 +6,11 @@
   },
   {
     "type": "internal",
+    "url": "/catalog",
+    "title": "Catalogue"
+  },
+  {
+    "type": "internal",
     "url": "/contact",
     "title": "Contact"
   }
