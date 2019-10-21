@@ -7,7 +7,7 @@ sections:
 - type: heading
   label: Pages
 - type: document
-  path: src/pages/about.md
+  path: src/pages/contact.md
   label: À propos
 - type: heading
   label: Projets
