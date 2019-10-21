@@ -9,6 +9,11 @@ fields:
   label: Template
   default: catalogue
   hidden: true
+- name: title
+  type: text
+  config:
+    required: false
+  label: Titre
 - name: catalogue_pdf
   type: file
   config:
