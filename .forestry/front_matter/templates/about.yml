@@ -8,7 +8,7 @@ fields:
     required: true
   label: Template
   hidden: true
-  default: about
+  default: contact
 - name: image
   type: file
   config:
