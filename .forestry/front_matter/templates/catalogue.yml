@@ -2,6 +2,13 @@
 label: Catalogue
 hide_body: true
 fields:
+- name: template
+  type: text
+  config:
+    required: true
+  label: Template
+  default: catalogue
+  hidden: true
 - name: catalogue_pdf
   type: file
   config:
