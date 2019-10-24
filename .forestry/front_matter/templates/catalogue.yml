@@ -15,6 +15,11 @@ fields:
   config:
     required: false
   label: Titre
+- name: preview_catalogue
+  type: file
+  config:
+    maxSize: 250
+  label: Preview catalogue
 - name: catalogue_pdf
   type: file
   config:
