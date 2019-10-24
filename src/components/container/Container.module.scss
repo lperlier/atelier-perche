@@ -2,17 +2,12 @@
 
 .Container {
   width: 100%;
-  max-width: 1680px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 40px;
   position: relative;
-  
+
   @include responsive($tabletSmall) {
     padding: 0 80px;
-  }
-  
-  @include responsive($desk) {
-    width: 80%;
   }
 }

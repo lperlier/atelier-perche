@@ -19,8 +19,8 @@
     }
 
    &__item {
-     
-       display:block;
+
+      display:block;
       text-align: center;
 
       @include responsive($menuBreakpoint) {
@@ -39,7 +39,7 @@
 
    &__link {
       position: relative;
-      opacity:0.3;
+      opacity:1;
       font-weight:700;
       transition:opacity 400ms $easeOutQuad;
       text-transform:uppercase;
@@ -49,7 +49,7 @@
       text-decoration:none;
 
       @include responsive($menuBreakpoint) {
-         font-size:1rem;
+         font-size:1.2rem;
       }
 
       &__Active,
@@ -57,6 +57,7 @@
       &:hover {
          opacity:1;
          &:after {
+           transform-origin:left center;
             transform:scaleX(1)!important;
          }
       }
@@ -69,9 +70,9 @@
          left:0;
          width:100%;
          height:1px;
-         background: $base;
+         background: $fontColor;
          transform:scaleX(0);
-         transform-origin:left center;
+         transform-origin:right center;
          transition:transform 400ms $easeOutQuad;
 
          body.showMenu & {

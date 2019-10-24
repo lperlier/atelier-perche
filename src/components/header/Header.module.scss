@@ -13,21 +13,52 @@
     padding-top: 40px;
     padding-bottom: 40px;
   }
-  
+
   &__containerBig {
     background:red;
   }
 }
 
 .Brand {
-  display:inline-block;
+  display: inline-block;
   position: relative;
   z-index: 10;
+  width: 50px;
+  overflow: hidden;
 
-  svg > * {
-    :global(body.is--MenuOpen) & {
-      @include responsive($menuBreakpoint, max) {
-        fill: $white;
+  @include responsive($menuBreakpoint) {
+    max-width:240px;
+    width:20vw;
+    min-width:240px;
+  }
+
+  &:before {
+    content:'';
+    display:block;
+    padding-top:100%;
+
+    @include responsive($menuBreakpoint) {
+      padding-top:20%;
+    }
+  }
+
+  svg {
+    position: absolute;
+    top:0;
+    left:0;
+    width:240px;
+    height:50px;
+
+    @include responsive($menuBreakpoint) {
+      height:100%;
+      width:100%;
+    }
+
+    > * {
+      :global(body.is--MenuOpen) & {
+        @include responsive($menuBreakpoint, max) {
+          fill: $white;
+        }
       }
     }
   }

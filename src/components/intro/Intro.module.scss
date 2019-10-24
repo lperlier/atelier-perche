@@ -1,7 +1,7 @@
 @import '~styles/config';
 
 .Intro {
-  
+
   position: fixed;
   top:0; left:0;
   width:100%;
@@ -22,14 +22,12 @@
     align-items:center;
     justify-content:center;
   }
-  
+
 }
 
 .brand {
   overflow:hidden;
   svg {
-    width:100px;
-    height:100px;
     > * {
       fill:$white;
     }
