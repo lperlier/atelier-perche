@@ -1,6 +1,7 @@
 @import 'reset';
 @import 'utils';
 @import 'fonts';
+@import 'links';
 
 body,
 html {
@@ -25,7 +26,7 @@ html {
 }
 
 .block {
-  width:400px; 
+  width:400px;
   height:200px;
   background:red;
   margin-right:20px;
@@ -37,8 +38,8 @@ body {
   font-family: $lato;
   font-size: 1.3rem;
   text-size-adjust: 100%;
-  color: $base;
-  
+  color: $fontColor;
+
   html:not(.no-js) &.is-first {
     visibility: hidden;
   }
@@ -48,7 +49,7 @@ body {
     cursor: progress;
     height:100vh;
   }
-  
+
   html:not(.no-js) &.is-animating {
     overflow: hidden;
     height:100vh;

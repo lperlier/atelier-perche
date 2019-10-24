@@ -17,6 +17,7 @@ exports.createPages = ({ graphql, actions }) => {
       contact: path.resolve('./src/templates/contact.js'),
       catalogue: path.resolve('./src/templates/catalogue.js')
     }
+
     resolve(
       // query for markdown files
       graphql(

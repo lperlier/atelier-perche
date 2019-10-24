@@ -1,6 +1,6 @@
-//
-//Effects
-//
+/* -----
+Effects
+----- */
 .filter{
 	@include bg();
 	&.black{
@@ -8,9 +8,10 @@
 	}
 }
 
-//
-//Misc
-//
+/* -----
+Misc
+----- */
+
 .hide {
 	display: none !important;
 }
@@ -31,9 +32,22 @@
 	text-align: right;
 }
 
-//
-//Lazyload
-//
+.vh {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+
+/* -----
+Lazyload
+----- */
+
 html:not(.no-js) .lazyload,
 html:not(.no-js) .lazyloading {
   opacity: 0;
@@ -52,31 +66,4 @@ html.no-js img.sr-only {
   position: relative;
   opacity: 1;
   transition: opacity 400ms linear 400ms;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-svg {
-	display:block;
-}
-
-input,
-textarea,
-select {
-  &::-webkit-input-placeholder {
-    color: $base;
-  }
-
-  &::-moz-placeholder {
-    opacity: 1;
-    color: $base;
-  }
-
-  &:-ms-input-placeholder {
-    color: $base;
-  }
 }

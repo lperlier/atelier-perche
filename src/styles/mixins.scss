@@ -1,6 +1,6 @@
-//
-//Basic Mixin'
-//
+/* -----
+Basic Mixin'
+----- */
 
 @mixin size($width, $height){
   width: $width;
@@ -39,9 +39,9 @@
 }
 
 
-//
-//Responsive
-//
+/* -----
+Responsive
+----- */
 
 @mixin responsive($width, $min:min) {
 
@@ -63,32 +63,45 @@
   }
 }
 
-
-@function strip-unit($number) {
-  @if type-of($number) == 'number' and not unitless($number) {
-    @return $number / ($number * 0 + 1);
-  }
-  @return $number;
-}
-
-
 @function get-vw($target, $context) {
   $vw-context: ($context*.01) * 1px;
   @return ($target/$vw-context) * 1.01vw;
 }
 
-
 @mixin font-vw($target, $context) {
-  font-size: get-vw($target, strip-unit($context));
+  font-size: get-vw($target, $context);
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
 }
 
 
-//
-//Grid
-//
+/* -----
+Grid
+----- */
 
-@mixin flex($align:center, $justify:flex-start) {
-  display:flex;
+@mixin flex($align:center, $justify:flex-start, $display:flex) {
+  display:$display;
   align-items:$align;
   justify-content:$justify;
   flex-wrap:wrap;
@@ -98,11 +111,17 @@
 
   display:grid;
   grid-template-columns:repeat($cols, 1fr);
-  grid-column-gap:$gutter;
   grid-row-gap:$gutter;
+  grid-column-gap:$gutter;
 
   > *:not(.col) {
     grid-column: span $cols;
+  }
+
+  @include responsive($tablet, max) {
+    > .col {
+      grid-column: span $cols;
+    }
   }
 
   @include responsive($tabletSmall) {
@@ -147,9 +166,9 @@
 
 
 
-//
-//Divers
-//
+/* -----
+Divers
+----- */
 
 @mixin clip-path($clip) {
   clip-path: $clip;
@@ -176,9 +195,9 @@
 
 
 
-//
-//Hover
-//
+/* -----
+Hover
+----- */
 
 @mixin hover-color($color){
   &:hover{color: $color;}
@@ -189,10 +208,9 @@
 }
 
 
-//
-//Background image
-//
-
+/* -----
+Background image
+----- */
 @mixin bg(){
     position: absolute;
     left: 0;

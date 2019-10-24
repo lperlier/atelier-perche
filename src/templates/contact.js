@@ -16,8 +16,12 @@ function About(props) {
     adresse : props.data.pageData.frontmatter.adresse,
     portrait : props.data.pageData.frontmatter.image,
     socials : props.data.pageData.frontmatter.socials,
-    contact : props.data.pageData.frontmatter.email,
+    contact : props.data.pageData.frontmatter.contact_email,
+    contact2 : props.data.pageData.frontmatter.contact_email_2,
   }
+
+  const mailcontact = `mailto:${page.contact}`
+  const mailcontact2 = `mailto:${page.contact2}`
 
   return (
 
@@ -30,7 +34,8 @@ function About(props) {
 
         <address dangerouslySetInnerHTML={{ __html: page.adresse }} />
 
-        <a href="mailto{page.contact}" target="_blank">{page.contact}</a>
+        <a href={mailcontact} className="Link" rel="noopener noreferrer">{page.contact}</a>
+        <a href={mailcontact2} className="Link" rel="noopener noreferrer">{page.contact2}</a>
         <a href={page.socials.facebook} rel="noopener noreferrer" target="_blank">facebook</a>
         <a href={page.socials.twitter} rel="noopener noreferrer" target="_blank">twitter</a>
         <a href={page.socials.instagram} rel="noopener noreferrer" target="_blank">instagram</a>
@@ -54,7 +59,8 @@ export const pageQuery = graphql`
       frontmatter {
         title
         adresse
-        email
+        contact_email
+        contact_email_2
         socials {
           facebook
           twitter
