@@ -8,19 +8,57 @@ import s from './Header.module.scss';
 
 import LogoAtelier from 'assets/svg/logo_atelier.svg'
 
-export const Header = () => (
+export class Header extends React.Component {
 
-  <header className={s.Header}>
-    <Container className={s.Header__container}>
+  constructor(props) {
+    super(props);
+    this.state = {openMenu: false};
+    this.toggleMenu = this.toggleMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
+  }
 
-      <Link className={s.Brand} to="/">
-        <LogoAtelier />
-      </Link>
+  toggleMenu = () => {
 
-      <Navbar/>
-      <ToggleMenu/>
+    this.setState({ openMenu: !this.state.openMenu });
 
-    </Container>
-  </header>
+    //Toggle Class
+    document.querySelector('body').classList.toggle('is--MenuOpen');
 
-)
+  }
+
+  closeMenu = () => {
+
+    if (this.state.openMenu) {
+
+      this.setState({ openMenu: false });
+
+      //Remove Class
+      document.querySelector('body').classList.remove('is--MenuOpen');
+
+    }
+
+    console.log(this);
+
+  }
+
+  render() {
+
+    return (
+
+      <header className={s.Header}>
+        <Container className={s.Header__container}>
+
+          <Link className={s.Brand} to="/" onClick={this.closeMenu}>
+            <LogoAtelier />
+          </Link>
+
+          <Navbar onClick={this.closeMenu}/>
+          <ToggleMenu toggleMenu={this.toggleMenu}/>
+
+        </Container>
+      </header>
+
+    )
+  };
+
+}

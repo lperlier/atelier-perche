@@ -6,6 +6,7 @@
    border: none;
    padding: 10px;
    z-index:10;
+   pointer-events: all;
 
    @include responsive($menuBreakpoint) {
       display: none;
@@ -15,7 +16,7 @@
       display: block;
       height: 2px;
       width: 20px;
-      background: $base;
+      background: $fontColor;
       border-radius: 6px;
       transform-origin:left center;
       transition:transform 400ms $easeOutQuad;

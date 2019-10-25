@@ -2,27 +2,26 @@ import React from 'react'
 
 // eslint-disable-next-line
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-import { PageHeader } from 'components/page/PageHeader'
 import { PageContent } from 'components/page/PageContent'
 
 function Catalog(props) {
 
   const page = {
     title : props.data.pageData.frontmatter.title,
-    catalog : props.data.pageData.frontmatter.catalogue_pdf.publicURL
+    catalogImage : props.data.pageData.frontmatter.preview_catalogue.childImageSharp.fluid,
+    catalogLink : props.data.pageData.frontmatter.catalogue_pdf.publicURL
   }
 
   return (
 
-    <main className="Single">
-      <PageHeader>
-        <h1>{page.title}</h1>
-      </PageHeader>
+    <main className="Catalogue__page">
       <PageContent >
-        <a href={page.catalog} rel="noopener noreferrer" target="_blank">catalogue pdf</a>
+        <a href={page.catalogLink} rel="noopener noreferrer" target="_blank">
+          <Img fluid={page.catalogImage} />
+        </a>
       </PageContent>
-
     </main>
 
   );
@@ -37,7 +36,16 @@ export const pageQuery = graphql`
       excerpt
       html
       frontmatter {
-        title
+        preview_catalogue {
+          childImageSharp {
+            fluid {
+              aspectRatio
+              src
+              srcSet
+              sizes
+            }
+          }
+        }
         catalogue_pdf {
           publicURL
         }

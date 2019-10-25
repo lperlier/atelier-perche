@@ -1,3 +1,45 @@
 .Link {
-  color:red;
+  position: relative;
+  color: $fontColor;
+  text-decoration: none;
+  display:inline-block;
+  font-size:1.4rem;
+  line-height:1.6;
+
+  &:hover {
+     &:after {
+       transform-origin:left center;
+        transform:scaleX(1)!important;
+     }
+  }
+
+  &:after {
+     content:'';
+     display:block;
+     position: absolute;
+     top:100%;
+     left:0;
+     width:100%;
+     height:1px;
+     background: $fontColor;
+     transform:scaleX(0);
+     transform-origin:right center;
+     transition:transform 400ms $easeOutQuad;
+  }
+}
+
+.Socials {
+  margin-top:20px;
+  @include flex(center, flex-start);
+
+  a {
+    margin-right:10px;
+
+    svg {
+      display:block;
+      > * {
+        fill:$fontColor;
+      }
+    }
+  }
 }

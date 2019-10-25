@@ -26,13 +26,10 @@ export const helmet = {
     { name: 'twitter:title', content: title },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:image', content: share },
-    { name: 'twitter:site', content: '@uenodotco' },
-    { name: 'twitter:creator', content: '@uenodotco' },
     { name: 'twitter:description', content: description },
   ],
   link: [
     { rel: 'icon', type: 'image/x-icon', href: favicon },
-    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Lato:300,400,700,900' },
-    { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css' },
+    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Quicksand:500,700&display=swap' }
   ]
 };

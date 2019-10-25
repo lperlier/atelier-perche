@@ -4,9 +4,12 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { PageHeader } from 'components/page/PageHeader'
+import Facebook from 'assets/svg/facebook.svg'
+import Instagram from 'assets/svg/instagram.svg'
+
 import { PageContent } from 'components/page/PageContent'
 import { YSWYWContent } from 'components/page/YSWYWContent'
+import { Row } from 'components/row/Row'
 
 function About(props) {
 
@@ -17,32 +20,31 @@ function About(props) {
     portrait : props.data.pageData.frontmatter.image,
     socials : props.data.pageData.frontmatter.socials,
     contact : props.data.pageData.frontmatter.contact_email,
-    contact2 : props.data.pageData.frontmatter.contact_email_2,
+    contact2 : props.data.pageData.frontmatter.contact_email_2
   }
-
-  const mailcontact = `mailto:${page.contact}`
-  const mailcontact2 = `mailto:${page.contact2}`
 
   return (
 
-    <main className="Single">
-      <PageHeader>
-        <h1>{page.title}</h1>
-      </PageHeader>
-      <PageContent >
-        <YSWYWContent html={page.html}/>
+    <main className="Contact__page">
+      <PageContent>
+        <Row>
+          <div className="content">
+            <YSWYWContent html={page.html}/>
+            <address dangerouslySetInnerHTML={{ __html: page.adresse }} />
+            <a href={`mailto:${page.contact}`} className="Link" rel="noopener noreferrer">{page.contact}</a><br/>
+            <a href={`mailto:${page.contact}`} className="Link" rel="noopener noreferrer">{page.contact2}</a>
 
-        <address dangerouslySetInnerHTML={{ __html: page.adresse }} />
+            <div className="Socials">
+              <a href={page.socials.facebook} rel="noopener noreferrer" target="_blank"><Facebook /></a>
+              <a href={page.socials.instagram} rel="noopener noreferrer" target="_blank"><Instagram /></a>
+            </div>
+          </div>
+          <div className="visual">
+            <Img fluid={page.portrait.childImageSharp.fluid} />
+          </div>
+        </Row>
 
-        <a href={mailcontact} className="Link" rel="noopener noreferrer">{page.contact}</a>
-        <a href={mailcontact2} className="Link" rel="noopener noreferrer">{page.contact2}</a>
-        <a href={page.socials.facebook} rel="noopener noreferrer" target="_blank">facebook</a>
-        <a href={page.socials.twitter} rel="noopener noreferrer" target="_blank">twitter</a>
-        <a href={page.socials.instagram} rel="noopener noreferrer" target="_blank">instagram</a>
-
-        <Img fluid={page.portrait.childImageSharp.fluid} />
       </PageContent>
-
     </main>
 
   );
@@ -63,7 +65,6 @@ export const pageQuery = graphql`
         contact_email_2
         socials {
           facebook
-          twitter
           instagram
         }
         image {

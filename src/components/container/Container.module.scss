@@ -6,8 +6,9 @@
   margin-right: auto;
   padding: 0 40px;
   position: relative;
+  max-width:1060px;
 
   @include responsive($tabletSmall) {
-    padding: 0 80px;
+    padding: 0 60px;
   }
 }

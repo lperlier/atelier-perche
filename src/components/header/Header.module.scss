@@ -1,21 +1,19 @@
 @import '~styles/config';
 
 .Header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
+  pointer-events: none;
 
   &__container {
     @include flex();
     justify-content: space-between;
     padding-top: 40px;
     padding-bottom: 40px;
-  }
-
-  &__containerBig {
-    background:red;
+    max-width:100%;
   }
 }
 
@@ -25,6 +23,7 @@
   z-index: 10;
   width: 50px;
   overflow: hidden;
+  pointer-events: all;
 
   @include responsive($menuBreakpoint) {
     max-width:240px;
