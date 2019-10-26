@@ -1,53 +1,76 @@
 import React from 'react'
+import { TweenMax, Expo } from "gsap/all";
 
 // eslint-disable-next-line
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import Facebook from 'assets/svg/facebook.svg'
-import Instagram from 'assets/svg/instagram.svg'
-
 import { PageContent } from 'components/page/PageContent'
 import { YSWYWContent } from 'components/page/YSWYWContent'
 import { Row } from 'components/row/Row'
+import { Col } from 'components/row/Col'
+import { Socials } from 'components/socials/Socials'
 
-function About(props) {
+import s from './contact.module.scss'
 
-  const page = {
-    title : props.data.pageData.frontmatter.title,
-    html : props.data.pageData.html,
-    adresse : props.data.pageData.frontmatter.adresse,
-    portrait : props.data.pageData.frontmatter.image,
-    socials : props.data.pageData.frontmatter.socials,
-    contact : props.data.pageData.frontmatter.contact_email,
-    contact2 : props.data.pageData.frontmatter.contact_email_2
+export class About extends React.Component {
+
+  constructor(props) {
+
+    super(props);
+    this.data = {
+      title : props.data.pageData.frontmatter.title,
+      html : props.data.pageData.html,
+      adresse : props.data.pageData.frontmatter.adresse,
+      portrait : props.data.pageData.frontmatter.image,
+      contact : props.data.pageData.frontmatter.contact_email,
+      contact2 : props.data.pageData.frontmatter.contact_email_2
+    }
+
+    this.myPageContent = React.createRef();
+    this.myPageVisual = React.createRef();
+
   }
 
-  return (
+  componentDidMount() {
 
-    <main className="Contact__page">
-      <PageContent>
-        <Row>
-          <div className="content">
-            <YSWYWContent html={page.html}/>
-            <address dangerouslySetInnerHTML={{ __html: page.adresse }} />
-            <a href={`mailto:${page.contact}`} className="Link" rel="noopener noreferrer">{page.contact}</a><br/>
-            <a href={`mailto:${page.contact}`} className="Link" rel="noopener noreferrer">{page.contact2}</a>
+    if (process.env.NODE_ENV === "development") console.log('Page Contact');
 
-            <div className="Socials">
-              <a href={page.socials.facebook} rel="noopener noreferrer" target="_blank"><Facebook /></a>
-              <a href={page.socials.instagram} rel="noopener noreferrer" target="_blank"><Instagram /></a>
-            </div>
-          </div>
-          <div className="visual">
-            <Img fluid={page.portrait.childImageSharp.fluid} />
-          </div>
-        </Row>
+    console.log(this.myPageVisual.current.querySelector('.gatsby-image-wrapper'));
 
-      </PageContent>
-    </main>
+    TweenMax.staggerFromTo(this.myPageContent.current.querySelectorAll(':scope > *'), 2.4, { y: "40", opacity:"0"}, { y:"0", opacity:"1", ease: Expo.easeOut, clearProps:"all", delay:0.5}, 0.2);
+    TweenMax.fromTo(this.myPageVisual.current.querySelector('.gatsby-image-wrapper'), 1.4, { y: "50vw", rotation:"5deg"}, { y:"0vw", rotation:"0deg", ease: Expo.easeOut, clearProps:"all"});
+    TweenMax.fromTo(this.myPageVisual.current.querySelector('picture'), 2.2, { scale: 1.6}, { scale:1, ease: Expo.easeOut, clearProps:"all"});
 
-  );
+  }
+
+  render() {
+
+    return (
+
+      <main className={s.Contact__page}>
+        <PageContent>
+
+          <Row>
+            <Col className={s.Contact__visual} ref={this.myPageVisual}>
+              <Img fluid={this.data.portrait.childImageSharp.fluid} />
+            </Col>
+            <Col className={s.Contact__content} ref={this.myPageContent}>
+              <YSWYWContent html={this.data.html}/>
+              <div className={s.Contact__address}>
+                <address dangerouslySetInnerHTML={{ __html: this.data.adresse }} />
+                <a href={`mailto:${this.data.contact}`} className="Link" rel="noopener noreferrer">{this.data.contact}</a><br/>
+                <a href={`mailto:${this.data.contact}`} className="Link" rel="noopener noreferrer">{this.data.contact2}</a>
+              </div>
+              <Socials/>
+            </Col>
+          </Row>
+
+        </PageContent>
+      </main>
+
+    )
+  }
 }
 
 export default About;
@@ -63,10 +86,6 @@ export const pageQuery = graphql`
         adresse
         contact_email
         contact_email_2
-        socials {
-          facebook
-          instagram
-        }
         image {
           childImageSharp {
             fluid {

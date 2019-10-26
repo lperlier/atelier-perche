@@ -38,7 +38,6 @@ export class Intro extends React.Component {
     this.introTween.fromTo(this.myIntroInner.current, 1, { y: 0 }, { y: '75%', ease: Power3.easeInOut, clearProps: 'all' }, 0.8);
     this.introTween.fromTo(this.myIntro.current, 1, { y: 0 }, { y: '-100%', ease: Power3.easeInOut, clearProps: 'all' }, 0.8);
 
-
   }
 
   playIntro() {

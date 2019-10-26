@@ -1,0 +1,47 @@
+@import '~styles/config';
+
+.Contact {
+
+  &__content {
+
+    @include responsive($tablet) {
+      max-width:50%!important;
+      order:1;
+    }
+
+    @include responsive($desk) {
+      max-width: 45%!important;
+    }
+  }
+
+  &__address {
+    margin-top:40px;
+  }
+
+  &__visual {
+    margin-bottom:40px;
+
+    @include responsive($tablet) {
+      max-width:40%!important;
+      margin-bottom:0;
+      order:2;
+    }
+
+    @include responsive($desk) {
+      max-width: 50%!important;
+    }
+
+    :global .gatsby-image-wrapper {
+      position:relative;
+      overflow: hidden;
+
+      picture {
+        @include absolute();
+      }
+
+      > div {
+        padding-bottom:100%!important;
+      }
+    }
+  }
+}

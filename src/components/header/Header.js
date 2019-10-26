@@ -37,8 +37,6 @@ export class Header extends React.Component {
 
     }
 
-    console.log(this);
-
   }
 
   render() {

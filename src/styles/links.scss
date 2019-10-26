@@ -27,19 +27,3 @@
      transition:transform 400ms $easeOutQuad;
   }
 }
-
-.Socials {
-  margin-top:20px;
-  @include flex(center, flex-start);
-
-  a {
-    margin-right:10px;
-
-    svg {
-      display:block;
-      > * {
-        fill:$fontColor;
-      }
-    }
-  }
-}

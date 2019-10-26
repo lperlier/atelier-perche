@@ -1,4 +1,11 @@
 .row {
   zoom: 1;
-  @include grid(4, 10px);
+  @include flex(center, space-between);
+
+  .col {
+    width:100%;
+    @include responsive($tablet) {
+      max-width: 50%;
+    }
+  }
 }

@@ -49,13 +49,20 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
-    `gatsby-plugin-sass`,
     /*{
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },*/
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        cssLoaderOptions: {
+          localIdentName: '[local]_[hash:base64:4]',
+        }
+      }
+    },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {

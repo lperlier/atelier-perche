@@ -1,0 +1,21 @@
+@import '~styles/config';
+
+.Catalogue {
+
+  &__link {
+    display:block;
+    width:80%;
+    max-width: 820px;
+    margin:0 auto;
+    box-shadow:0px 0px 30px rgba(0,0,0,0.1);
+
+    :global .gatsby-image-wrapper {
+      transition: all 400ms $easeOutQuad;
+    }
+
+    &:hover :global .gatsby-image-wrapper {
+      transform:scale(1.04);
+      box-shadow:0px 0px 60px rgba(0,0,0,0.1);
+    }
+  }
+}
