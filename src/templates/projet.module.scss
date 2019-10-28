@@ -1,0 +1,39 @@
+@import '~styles/config';
+
+.Project {
+  position: relative;
+
+  &__header {
+    position: relative;
+    padding:140px 40px 40px;
+
+    @include responsive($tabletSmall) {
+      position: fixed;
+      bottom:60px;
+      left:60px;
+      max-width: 320px;
+      padding:0;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__description {
+    position: relative;
+  }
+
+  &__scrollcontainer {
+    position: relative;
+    > * {
+      @include responsive($tabletSmall, max) {
+        padding-top:0;
+      }
+    }
+  }
+
+}

@@ -1,7 +1,8 @@
 import React from 'react'
-import { TimelineMax, Power3 } from "gsap/all";
+import { TimelineMax, Power3 } from "gsap";
 
 import Logo from 'assets/svg/logo.svg'
+import { IntroImage } from './IntroImage'
 
 import s from './Intro.module.scss';
 
@@ -10,9 +11,11 @@ export class Intro extends React.Component {
   constructor(props) {
 
     super(props);
+
     this.myIntro = React.createRef();
     this.myIntroInner = React.createRef();
     this.myIntroBrand = React.createRef();
+    this.myIntroImage = React.createRef();
     this.introTween = null
 
   }
@@ -21,6 +24,7 @@ export class Intro extends React.Component {
 
     if (process.env.NODE_ENV === "development") console.log('Intro');
 
+    const IntroDuration = 1.2;
     this.introTween = new TimelineMax({
       paused: true,
       onStart: () => {
@@ -34,9 +38,11 @@ export class Intro extends React.Component {
     });
 
 
-    this.introTween.fromTo(this.myIntroBrand.current, 1, { opacity: 0, scale: 1.2 }, { opacity: 1, scale: 1, ease: Power3.easeOut, clearProps: 'all' }, 0);
-    this.introTween.fromTo(this.myIntroInner.current, 1, { y: 0 }, { y: '75%', ease: Power3.easeInOut, clearProps: 'all' }, 0.8);
-    this.introTween.fromTo(this.myIntro.current, 1, { y: 0 }, { y: '-100%', ease: Power3.easeInOut, clearProps: 'all' }, 0.8);
+    this.introTween.fromTo(this.myIntroBrand.current, IntroDuration, { opacity: 0, scale: 1.2 }, { opacity: 1, scale: 1, ease: Power3.easeOut, clearProps: 'all' }, 0.2);
+    this.introTween.from(this.myIntroImage.current, IntroDuration * 1.2, { y:"100vh", rotation:"20", ease: Power3.easeOut, clearProps: 'all' }, 0);
+    this.introTween.fromTo(this.myIntroInner.current, IntroDuration, { y: 0 }, { y: '75vh', ease: Power3.easeInOut, clearProps: 'all' }, IntroDuration * 1.2);
+    this.introTween.fromTo(this.myIntro.current, IntroDuration, { y: 0 }, { y: '-100vh', ease: Power3.easeInOut, clearProps: 'all' }, IntroDuration * 1.2);
+    this.introTween.to(this.myIntroImage.current, IntroDuration * 1.2, { y:"-150vh", rotation:"-20", ease: Power3.easeInOut, clearProps: 'all' }, IntroDuration * 1.2);
 
   }
 
@@ -53,6 +59,7 @@ export class Intro extends React.Component {
           <div className={s.brand} ref={this.myIntroBrand}>
             <Logo/>
           </div>
+          <IntroImage className={s.Intro__image} ref={this.myIntroImage} />
         </div>
       </div>
 

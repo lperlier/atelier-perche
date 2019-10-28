@@ -18,6 +18,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  background: $fontColor;
 }
 
 *,
@@ -40,9 +41,12 @@ body {
   font-size: 1.3rem;
   text-size-adjust: 100%;
   color: $fontColor;
+  overflow: hidden;
 
   html:not(.no-js) &.is-first {
     visibility: hidden;
+    background: $fontColor;
+    opacity: 0;
   }
 
   html:not(.no-js) &.is-loading {
@@ -55,4 +59,12 @@ body {
     overflow: hidden;
     height:100vh;
   }
+}
+
+.mask {
+  overflow: hidden;
+}
+
+.gatsby-image-wrapper {
+  background:$grey;
 }

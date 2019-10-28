@@ -23,10 +23,31 @@
     justify-content:center;
   }
 
+  &__image {
+    width:20vw;
+    min-width:200px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    z-index: 10;
+
+    &:global(.is--paysage) {
+      width:30vw;
+      min-width:400px;
+    }
+
+    :global .gatsby-image-wrapper {
+      background:transparent;
+    }
+  }
+
 }
 
 .brand {
+  position: relative;
   overflow:hidden;
+  z-index: 100;
   svg {
     > * {
       fill:$white;

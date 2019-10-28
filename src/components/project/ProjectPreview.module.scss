@@ -1,0 +1,78 @@
+@import '~styles/config';
+
+.ProjectPreview {
+
+  position: relative;
+  width:100%;
+  display:block;
+
+  @include responsive($tabletSmall) {
+    width:20vw;
+    min-width:280px;
+  }
+
+  @include responsive($tabletSmall) {
+    &:hover {
+      :global(.visual__container) {
+        transform:rotate(-1deg);
+      }
+
+      :global(.gatsby-image-wrapper) {
+        transform:scale(1.05);
+      }
+
+      .ProjectPreview__header {
+        transform:translateX(0%);
+        h3 {
+          transform:translateX(0%);
+        }
+      }
+    }
+  }
+
+  &:global(.is--paysage) {
+    @include responsive($tabletSmall) {
+      min-width:460px;
+    }
+  }
+
+  :global(.visual__container) {
+    position: relative;
+    overflow: hidden;
+    transition:transform 1200ms $easeOutExpo;
+  }
+
+  :global(.gatsby-image-wrapper) {
+    transform:scale(1.01);
+    transition:transform 1200ms $easeOutExpo;
+  }
+
+  &__header {
+    position: absolute;
+    z-index: 10;
+    bottom:10%;
+    right:-2px;
+    padding:12px 15px;
+    background:$grey-l;
+    overflow: hidden;
+
+    @include responsive($tabletSmall) {
+      transform:translateX(100%);
+      transition: 1200ms $easeOutExpo;
+    }
+
+    h3 {
+      margin: 0;
+      color: $fontColor;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      font-weight: 300;
+
+      @include responsive($tabletSmall) {
+        transform:translateX(100%);
+        transition: 1200ms $easeOutExpo;
+      }
+    }
+  }
+
+}

@@ -1,34 +1,41 @@
 import React from 'react'
-// eslint-disable-next-line
-import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import { PageHeader } from 'components/page/PageHeader'
+import Helmet from 'react-helmet';
+
+import { ScrollContainer } from 'components/container/ScrollContainer'
+import { ProjectPreview } from 'components/project/ProjectPreview'
 
 import useProjects from 'hooks/use-projects';
 
 function Homepage(props) {
 
     const projects = useProjects();
+    const projectFake = []
+
+    for (const project of projects) {
+      projectFake.push(project);
+      projectFake.push(project);
+      projectFake.push(project);
+      projectFake.push(project);
+      projectFake.push(project);
+      projectFake.push(project);
+      projectFake.push(project);
+      projectFake.push(project);
+      projectFake.push(project);
+      projectFake.push(project);
+    };
 
     return (
 
+
       <main className="HomePage">
-        <PageHeader>
+        <Helmet title="Accueil" />
+        <ScrollContainer>
 
-          <div className="ScrollContainer">
-            <div className="container">
+            {projectFake.map((project, index) => (
+                <ProjectPreview key={index} project={project}/>
+            ))}
 
-              {projects.map(projet => (
-                <Link key={projet.slug} to={projet.slug}>
-                  {projet.title}
-                  <Img fluid={projet.randomImage} />
-                </Link>
-              ))}
-
-            </div>
-          </div>
-
-        </PageHeader>
+        </ScrollContainer>
       </main>
 
     )

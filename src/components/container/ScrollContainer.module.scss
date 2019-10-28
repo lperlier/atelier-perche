@@ -1,0 +1,51 @@
+@import '~styles/config';
+
+.ScrollContainer {
+
+  @include responsive($tabletSmall) {
+    @include flex(center, flex-start);
+    height:100vh;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__inner {
+    padding: 140px 30px 30px;
+
+    @include responsive($tabletSmall) {
+      padding: 120px;
+      @include flex(flex-start, center);
+      flex-wrap: nowrap;
+    }
+
+    > * {
+      @include responsive($tabletSmall) {
+        width:auto;
+        min-width:20vw;
+        min-height:20vh;
+      }
+
+      &:nth-child(even) {
+        @include responsive($tabletSmall) {
+          margin-top:40px;
+        }
+      }
+
+      &:not(:last-child) {
+        @include responsive($tabletSmall) {
+          margin-right:120px;
+        }
+      }
+
+      &+* {
+        @include responsive($tabletSmall, max) {
+          margin-top:40px;
+        }
+      }
+    }
+  }
+}

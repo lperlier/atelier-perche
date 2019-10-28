@@ -1,7 +1,8 @@
 import React from 'react'
-import { TweenMax, Expo } from "gsap/all";
+import Helmet from 'react-helmet';
 
-// eslint-disable-next-line
+import { TimelineMax, Expo } from "gsap";
+
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -29,6 +30,7 @@ export class About extends React.Component {
 
     this.myPageContent = React.createRef();
     this.myPageVisual = React.createRef();
+    this.AboutTween = null;
 
   }
 
@@ -36,12 +38,20 @@ export class About extends React.Component {
 
     if (process.env.NODE_ENV === "development") console.log('Page Contact');
 
-    console.log(this.myPageVisual.current.querySelector('.gatsby-image-wrapper'));
+    this.AboutTween = new TimelineMax({
+      paused : true
+    });
 
-    TweenMax.staggerFromTo(this.myPageContent.current.querySelectorAll(':scope > *'), 2.4, { y: "40", opacity:"0"}, { y:"0", opacity:"1", ease: Expo.easeOut, clearProps:"all", delay:0.5}, 0.2);
-    TweenMax.fromTo(this.myPageVisual.current.querySelector('.gatsby-image-wrapper'), 1.4, { y: "50vw", rotation:"5deg"}, { y:"0vw", rotation:"0deg", ease: Expo.easeOut, clearProps:"all"});
-    TweenMax.fromTo(this.myPageVisual.current.querySelector('picture'), 2.2, { scale: 1.6}, { scale:1, ease: Expo.easeOut, clearProps:"all"});
+    this.AboutTween.staggerFromTo(this.myPageContent.current.querySelectorAll(':scope > *'), 2.4, { y: "40", opacity:"0"}, { y:"0", opacity:"1", ease: Expo.easeOut, clearProps:"all", delay:0.5}, 0.2, 0);
+    this.AboutTween.fromTo(this.myPageVisual.current, 1.4, { y: "50vw", rotation:"5deg"}, { y:"0vw", rotation:"0deg", ease: Expo.easeOut, clearProps:"all"}, 0);
+    this.AboutTween.fromTo(this.myPageVisual.current.querySelector('.gatsby-image-wrapper'), 2.2, { scale: 1.6}, { scale:1, ease: Expo.easeOut, clearProps:"all"}, 0);
+    this.AboutTween.play();
 
+  }
+
+  componentWillUnmount() {
+    this.AboutTween.stop();
+    this.AboutTween = null;
   }
 
   render() {
@@ -49,11 +59,15 @@ export class About extends React.Component {
     return (
 
       <main className={s.Contact__page}>
-        <PageContent>
 
+        <Helmet title={this.data.title} />
+
+        <PageContent>
           <Row>
             <Col className={s.Contact__visual} ref={this.myPageVisual}>
-              <Img fluid={this.data.portrait.childImageSharp.fluid} />
+              <div className="mask">
+                <Img fluid={this.data.portrait.childImageSharp.fluid} />
+              </div>
             </Col>
             <Col className={s.Contact__content} ref={this.myPageContent}>
               <YSWYWContent html={this.data.html}/>
@@ -65,8 +79,8 @@ export class About extends React.Component {
               <Socials/>
             </Col>
           </Row>
-
         </PageContent>
+
       </main>
 
     )

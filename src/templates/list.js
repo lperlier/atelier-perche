@@ -1,45 +1,44 @@
 import React from 'react'
-// eslint-disable-next-line
-import { Link } from "gatsby"
-import { graphql } from 'gatsby'
+import Helmet from 'react-helmet';
 
-import { PageHeader } from 'components/page/PageHeader'
-import { PageContent } from 'components/page/PageContent'
+import { ScrollContainer } from 'components/container/ScrollContainer'
+import { ProjectPreview } from 'components/project/ProjectPreview'
+
+import useProjects from 'hooks/use-projects';
 
 function List(props) {
-  
-  const childPosts = props.pageContext.children
 
-  return (
-    
-      <main className="Archive">
-        <PageHeader></PageHeader>
-        <PageContent>
-          {childPosts.map((child, index) => (
-            <article key={index}>
-              <Link to={child.node.fields.slug}>
-                <h3>{child.node.frontmatter.title}</h3>
-                <p>{child.node.excerpt}</p>
-              </Link>
-            </article>
-          ))}
-        </PageContent>
+    const projects = useProjects();
+    const projectFake = []
+
+    for (const project of projects) {
+      projectFake.push(project);
+      projectFake.push(project);
+      projectFake.push(project);
+      projectFake.push(project);
+      projectFake.push(project);
+      projectFake.push(project);
+      projectFake.push(project);
+      projectFake.push(project);
+      projectFake.push(project);
+      projectFake.push(project);
+    };
+
+    return (
+
+
+      <main className="HomePage">
+        <Helmet title="Accueil" />
+        <ScrollContainer>
+
+            {projectFake.map((project, index) => (
+                <ProjectPreview key={index} project={project}/>
+            ))}
+
+        </ScrollContainer>
       </main>
-      
-  );
+
+    )
 }
 
 export default List;
-
-export const pageQuery = graphql`
-  query ListPageBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt
-      html
-      frontmatter {
-        title
-      }
-    }
-  }
-`

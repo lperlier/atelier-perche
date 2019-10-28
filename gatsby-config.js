@@ -2,7 +2,7 @@ const path = require('path');
 const config = require('./site-config.json')
 
 module.exports = {
-  pathPrefix: '/',
+  //pathPrefix: '/atelier-perche',
   siteMetadata: {
     title: config.title,
     description: config.description
