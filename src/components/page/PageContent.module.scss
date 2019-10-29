@@ -3,7 +3,7 @@
 .PageContent {
   padding:120px 0 80px;
 
-  @include responsive($tabletSmall) {
+  @include responsive($tablet) {
       @include flex(center, center);
       width:100%;
       height:100vh;

@@ -4,8 +4,12 @@
 
   &__page {
     overflow: hidden;
+    min-height:100vh;
+
     > * {
       overflow: hidden!important;
+      @include flex(center, center);
+      min-height:100vh;
     }
   }
 
@@ -56,6 +60,11 @@
   transform:translate(50%, 50%) scale(1);
   transition: transform 400ms $easeOutQuad;
 
+  @include responsive($tabletSmall, max) {
+    bottom:0%;
+    right:50%;
+  }
+
   :global #DL_text {
     position: absolute;
     top:50%;
@@ -65,6 +74,10 @@
     display:block;
     transform:translate(-50%, -50%) rotate(160deg);
     transition: transform 1200ms $easeOutExpo;
+
+    @include responsive($tabletSmall, max) {
+      display:none;
+    }
   }
 
   svg {

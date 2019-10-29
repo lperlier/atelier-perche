@@ -41,7 +41,10 @@ body {
   font-size: 1.3rem;
   text-size-adjust: 100%;
   color: $fontColor;
-  overflow: hidden;
+
+  @include responsive($tablet) {
+    overflow: hidden;
+  }
 
   html:not(.no-js) &.is-first {
     visibility: hidden;
