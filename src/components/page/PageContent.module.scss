@@ -1,11 +1,13 @@
 @import '~styles/config';
 
 .PageContent {
-
-  @include flex(center, center);
-  width:100%;
-  height:100vh;
-  overflow: auto;
   padding:120px 0 80px;
+
+  @include responsive($tabletSmall) {
+      @include flex(center, center);
+      width:100%;
+      height:100vh;
+      overflow: auto;
+  }
 
 }

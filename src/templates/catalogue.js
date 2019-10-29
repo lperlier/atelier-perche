@@ -7,6 +7,7 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { PageContent } from 'components/page/PageContent'
+import DownloadText from 'assets/svg/download_text.svg'
 
 import s from './catalogue.module.scss'
 
@@ -62,6 +63,7 @@ export class Catalog extends React.Component {
           <a className={s.Catalogue__link} href={this.data.catalogLink} ref={this.myCatalogLink} rel="noopener noreferrer" target="_blank">
             <Img fluid={this.data.catalogImage} />
             <span className={s.Link__icon}>
+              <DownloadText />
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11.362 2c4.156 0 2.638 6 2.638 6s6-1.65 6 2.457v11.543h-16v-20h7.362zm.827-2h-10.189v24h20v-14.386c0-2.391-6.648-9.614-9.811-9.614zm-5.189 12.5c0-.828.672-1.5 1.501-1.5.827 0 1.499.672 1.499 1.5s-.672 1.5-1.499 1.5c-.829 0-1.501-.672-1.501-1.5zm6.5.5l-2.093 2.968-1.31-.968-3.097 4h10l-3.5-6z"/></svg>
             </span>
           </a>

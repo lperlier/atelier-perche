@@ -34,9 +34,8 @@ export class Intro extends React.Component {
       onComplete: () => {
         document.body.classList.remove('is-animating');
       },
-      delay: 0.6
+      delay: 1.2
     });
-
 
     this.introTween.fromTo(this.myIntroBrand.current, IntroDuration, { opacity: 0, scale: 1.2 }, { opacity: 1, scale: 1, ease: Power3.easeOut, clearProps: 'all' }, 0.2);
     this.introTween.from(this.myIntroImage.current, IntroDuration * 1.2, { y:"100vh", rotation:"20", ease: Power3.easeOut, clearProps: 'all' }, 0);
