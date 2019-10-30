@@ -1,6 +1,6 @@
 ---
 template: projet
-title: Test sans accents
+title: Tést sans àccents
 gallery:
 - "/src/images/01-2.jpg"
 
