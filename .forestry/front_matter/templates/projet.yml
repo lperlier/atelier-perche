@@ -18,5 +18,3 @@ fields:
   type: image_gallery
   config: {}
   label: Gallerie
-pages:
-- src/pages/projets/table-basse-bubertré.md
