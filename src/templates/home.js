@@ -9,29 +9,14 @@ import useProjects from 'hooks/use-projects';
 function Homepage(props) {
 
     const projects = useProjects();
-    const projectFake = []
-
-    for (const project of projects) {
-      projectFake.push(project);
-      projectFake.push(project);
-      projectFake.push(project);
-      projectFake.push(project);
-      projectFake.push(project);
-      projectFake.push(project);
-      projectFake.push(project);
-      projectFake.push(project);
-      projectFake.push(project);
-      projectFake.push(project);
-    };
 
     return (
-
 
       <main className="HomePage">
         <Helmet title="Accueil" />
         <ScrollContainer>
 
-            {projectFake.map((project, index) => (
+            {projects.map((project, index) => (
                 <ProjectPreview key={index} project={project}/>
             ))}
 

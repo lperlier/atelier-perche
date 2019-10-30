@@ -19,6 +19,7 @@ fields:
   config: {}
   label: Gallerie
 pages:
+- src/pages/projets/table-basse-bubertre.md
 - src/pages/projets/la-poterie-au-perche.md
 - src/pages/projets/soligny.md
-- src/pages/projets/rémalard.md
+- src/pages/projets/remalard.md

@@ -1,5 +1,4 @@
 ---
 title : Projets
-
-
+template : list
 ---
