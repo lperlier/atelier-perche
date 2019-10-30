@@ -20,3 +20,4 @@ fields:
   label: Gallerie
 pages:
 - src/pages/projets/la-poterie-au-perche.md
+- src/pages/projets/soligny.md
