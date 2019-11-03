@@ -2,8 +2,10 @@ import React from 'react'
 import Helmet from 'react-helmet';
 
 import { TimelineMax, Expo } from "gsap";
+import Modal from 'react-modal';
 
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import { ScrollContainer } from 'components/container/ScrollContainer'
 import { ProjectVisual } from 'components/project/ProjectVisual'
@@ -15,13 +17,23 @@ export class Project extends React.Component {
   constructor(props) {
 
     super(props);
+
     this.data = {
       title : props.data.pageData.frontmatter.title,
       html : props.data.pageData.html,
       gallery : props.data.pageData.frontmatter.gallery
-    }
+    };
+
+    this.state = {
+      modalIsOpen: false,
+      selectedImage: null
+    };
+
     this.myProjectHeader = React.createRef();
+    this.myProjectModal = React.createRef();
     this.ProjectTween = null;
+    this.ModalOpenTween = null;
+    this.ModalCloseTween = null;
 
   }
 
@@ -29,7 +41,7 @@ export class Project extends React.Component {
 
     if (process.env.NODE_ENV === "development") console.log('Page Projet');
 
-    console.log(this.myProjectHeader.current.querySelectorAll(":scope > *"));
+    Modal.setAppElement('body');
 
     this.ProjectTween = new TimelineMax({
       paused : true
@@ -44,7 +56,40 @@ export class Project extends React.Component {
     this.ProjectTween = null;
   }
 
+  openModal(image) {
+    this.setState({modalIsOpen: true});
+    this.setState({selectedImage: image});
+  }
+
+  afterOpenModal() {
+
+    this.ModalOpenTween = new TimelineMax({
+      paused : true
+    });
+
+    this.ModalOpenTween.fromTo(this.myProjectModal.current.node.querySelector(".ReactModal__Overlay"), 0.5, { opacity: 0}, { opacity:1, ease: Expo.easeOut, clearProps:"opcaity"}, 0);
+    this.ModalOpenTween.fromTo(this.myProjectModal.current.node.querySelector(".ReactModal__Content"), 1.4, { y: "100vw"}, { y:"0", ease: Expo.easeOut, clearProps:"transform"}, 0);
+    this.ModalOpenTween.fromTo(this.myProjectModal.current.node.querySelector(".gatsby-image-wrapper"), 1.4, { y: "-80vw", scale:1.15}, { y:"0", scale:1, ease: Expo.easeOut, clearProps:"transform"}, 0);
+    this.ModalOpenTween.play();
+
+  }
+
+  closeModal() {
+
+    this.ModalCloseTween = new TimelineMax({
+      paused : true,
+      onComplete : () => {
+        this.setState({modalIsOpen: false});
+      }
+    });
+
+    this.ModalCloseTween.fromTo(this.myProjectModal.current.node.querySelector(".ReactModal__Overlay"), 0.2, { opacity: 1}, { opacity:0, clearProps:"opcaity"}, 0);
+    this.ModalCloseTween.play();
+  }
+
   render() {
+
+    const { modalIsOpen, selectedImage } = this.state;
 
     return (
 
@@ -58,9 +103,16 @@ export class Project extends React.Component {
 
         <ScrollContainer className={s.Project__scrollcontainer}>
           {this.data.gallery.map((image, index) => (
-            <ProjectVisual key={index} img={image.childImageSharp.fluid} />
+            <button className={s.Project__item} key={index} onClick={() => this.openModal(image)} >
+              <ProjectVisual img={image.childImageSharp.fluid} />
+            </button>
           ))}
         </ScrollContainer>
+
+        <Modal isOpen={modalIsOpen} ref={this.myProjectModal} className={s.Project__fullView} onAfterOpen={() => this.afterOpenModal()} >
+          {modalIsOpen && (<Img fluid={selectedImage.childImageSharp.fluid} onClick={() => this.closeModal()}/>)}
+        </Modal>
+
       </article>
 
     );
@@ -79,7 +131,7 @@ export const pageQuery = graphql`
         title
         gallery {
           childImageSharp {
-            fluid {
+            fluid(maxWidth: 1600, quality: 80) {
               aspectRatio
               src
               srcSet

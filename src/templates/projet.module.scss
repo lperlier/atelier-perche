@@ -36,4 +36,64 @@
     }
   }
 
+  &__item {
+    padding:0;
+    outline: none;
+    cursor:pointer;
+    background:none;
+
+    @include responsive($tabletSmall, max) {
+        display:block;
+        width:100%;
+        pointer-events: none;
+    }
+
+    > * {
+      overflow: hidden;
+      transition: transform 800ms $easeOutExpo;
+    }
+
+    :global(.gatsby-image-wrapper) {
+      transition: transform 800ms $easeOutExpo;
+    }
+
+    @include responsive($tabletSmall) {
+      &:hover {
+        :global(> *) {
+          transform:scale(0.95);
+        }
+
+        :global(.gatsby-image-wrapper) {
+          transform:scale(1.1);
+        }
+      }
+    }
+  }
+
+  &__fullView {
+    width:100%;
+    padding:0;
+    margin:0;
+  }
+
+}
+
+:global(.ReactModal__Overlay) {
+  z-index: 1000;
+  background:rgba(0,0,0,0.8)!important;
+}
+
+:global(.ReactModal__Content) {
+  overflow: auto;
+  position: absolute;
+  top:0;
+  left:0;
+  height:100vh;
+  @include flex(center, center);
+  outline: none;
+
+  > * {
+    width:100%;
+    background:transparent;
+  }
 }
