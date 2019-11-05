@@ -25,6 +25,8 @@
   overflow: hidden;
   pointer-events: all;
 
+  &[aria-current="page"] {pointer-events: none;}
+
   @include responsive($menuBreakpoint) {
     max-width:240px;
     width:20vw;
