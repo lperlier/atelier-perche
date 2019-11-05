@@ -91,6 +91,7 @@
   height:100vh;
   @include flex(center, center);
   outline: none;
+  padding:30px;
 
   > * {
     width:100%;

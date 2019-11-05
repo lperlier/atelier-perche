@@ -39,9 +39,7 @@ export class Catalog extends React.Component {
       }
     });
 
-    this.myCatalogTween.fromTo(this.myCataloguePage.current, 1.8, { y: "100%"}, { y:"0%", ease: Expo.easeOut, clearProps:"all"}, 0);
-    this.myCatalogTween.fromTo(this.myCatalogLink.current, 1.8, { y: "-100%"}, { y:"0%", ease: Expo.easeOut }, 0);
-    this.myCatalogTween.fromTo(this.myCatalogLink.current, 2.4, { x:"11%", scale:"2.6"}, { x:"0%", scale:"1", ease: Expo.easeInOut, clearProps:"all", delay:0.8}, 0);
+    this.myCatalogTween.fromTo(this.myCatalogLink.current, 1.8, { opacity:0, scale:"1.4"}, { opacity:1, scale:"1", ease: Expo.easeInOut, clearProps:"all"}, 0);
     this.myCatalogTween.play();
 
   }

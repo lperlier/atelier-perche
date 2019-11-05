@@ -94,6 +94,7 @@ export class Project extends React.Component {
     return (
 
       <article className={s.Project}>
+
         <Helmet title={this.data.title} />
 
         <div className={s.Project__header} ref={this.myProjectHeader}>

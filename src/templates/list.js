@@ -12,7 +12,6 @@ function List(props) {
 
     return (
 
-
       <main className="ProjetsPage">
         <Helmet title="Projets" />
         <ScrollContainer>

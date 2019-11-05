@@ -31,5 +31,8 @@ export const helmet = {
   link: [
     { rel: 'icon', type: 'image/x-icon', href: favicon },
     { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Quicksand:500,700&display=swap' }
+  ],
+  script:[
+    { src: '/libs/horizontal-scroll.js', type: 'text/javascript'}
   ]
 };
