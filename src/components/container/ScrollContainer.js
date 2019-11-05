@@ -1,6 +1,7 @@
 import React from 'react'
 import { TimelineMax, Expo } from "gsap";
 import s from './ScrollContainer.module.scss';
+import HorizontalScroll from 'horizontal-scroll';
 
 export class ScrollContainer extends React.Component {
 
@@ -14,6 +15,8 @@ export class ScrollContainer extends React.Component {
     this.containerClasses = s.ScrollContainer;
     if (passProps.className) this.containerClasses = [s.ScrollContainer, passProps.className].join(' ');
 
+    console.log(HorizontalScroll);
+
   }
 
   componentDidMount() {
@@ -24,6 +27,16 @@ export class ScrollContainer extends React.Component {
 
     this.myScrollContainerTween.staggerFrom(this.myScrollContainer.current.querySelectorAll(':scope > * > *'), 2.4, { x:"100vw", ease: Expo.easeOut, clearProps:"transform"}, 0.05, 0);
     this.myScrollContainerTween.play();
+
+    const myBlocks = this.myScrollContainer.current.querySelectorAll(':scope > * > *');
+    const myContainer = this.myScrollContainer.current.querySelectorAll(':scope > *');
+
+    console.log(myBlocks, myContainer);
+
+    this.hs = new HorizontalScroll({
+    	blocks: myBlocks,
+    	container: myContainer
+    });
 
   }
 

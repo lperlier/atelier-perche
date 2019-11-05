@@ -3,43 +3,58 @@
 .ScrollContainer {
 
   @include responsive($tabletSmall) {
-    @include flex(center, flex-start);
     height:100vh;
-    -webkit-overflow-scrolling: touch;
-    overflow-x: auto;
   }
 
   &__inner {
     padding: 140px 30px 30px;
 
     @include responsive($tabletSmall) {
-      padding: 120px;
-      @include flex(flex-start, center);
-      flex-wrap: nowrap;
+      padding: 0;
+      height:100vh;
     }
 
-    > * {
+    :global(.horizontal-scroll) {
       @include responsive($tabletSmall) {
-        width:auto;
-        min-width:20vw;
-        min-height:20vh;
+        height:100%;
+        @include flex(flex-start, flex-start);
+        flex-wrap: nowrap;
+        padding: 20vh 120px;
+        will-change: transform;
       }
 
-      &:nth-child(even) {
+      @include responsive($tabletSmall, max) {
+        position: relative!important;
+        transform:none!important;
+      }
+
+      > * {
         @include responsive($tabletSmall) {
-          margin-top:40px;
+          width:auto;
+          min-width:340px;
         }
-      }
 
-      &:not(:last-child) {
-        @include responsive($tabletSmall) {
-          margin-right:120px;
-        }
-      }
-
-      &+* {
         @include responsive($tabletSmall, max) {
-          margin-top:40px;
+          width:100%;
+          display:block!important;
+        }
+
+        &:nth-child(even) {
+          @include responsive($tabletSmall) {
+            margin-top:40px;
+          }
+        }
+
+        &:not(:last-child) {
+          @include responsive($tabletSmall) {
+            margin-right:120px;
+          }
+        }
+
+        &+* {
+          @include responsive($tabletSmall, max) {
+            margin-top:40px;
+          }
         }
       }
     }

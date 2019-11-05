@@ -7,7 +7,7 @@
     min-height:100vh;
 
     > * {
-      overflow: hidden!important;
+      overflow: hidden;
       @include flex(center, center);
       min-height:100vh;
     }

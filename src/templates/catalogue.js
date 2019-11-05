@@ -59,7 +59,7 @@ export class Catalog extends React.Component {
 
         <Helmet title={this.data.title} />
 
-        <PageContent >
+        <PageContent>
           <a className={s.Catalogue__link} href={this.data.catalogLink} ref={this.myCatalogLink} rel="noopener noreferrer" target="_blank">
             <Img fluid={this.data.catalogImage} />
             <span className={s.Link__icon}>
