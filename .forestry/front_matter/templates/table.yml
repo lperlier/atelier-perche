@@ -1,6 +1,7 @@
 ---
-label: Table
+label: Projet:Table
 hide_body: false
+display_field: title
 fields:
 - type: text
   name: template
