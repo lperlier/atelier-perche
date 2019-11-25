@@ -24,7 +24,7 @@ sections:
 - type: directory
   path: src/pages/projets/tables
   label: Tables
-  create: all
+  create: documents
   match: "**/*"
   templates:
   - projet
