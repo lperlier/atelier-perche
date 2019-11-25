@@ -21,6 +21,13 @@ sections:
   match: "**/*"
   templates:
   - projet
+- type: directory
+  path: src/pages/projets/tables
+  label: Tables
+  create: all
+  match: "**/*"
+  templates:
+  - projet
 upload_dir: src/images
 public_path: "/src/images"
 front_matter_path: ''
