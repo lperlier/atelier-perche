@@ -61,8 +61,10 @@ export class Catalog extends React.Component {
           <a className={s.Catalogue__link} href={this.data.catalogLink} ref={this.myCatalogLink} rel="noopener noreferrer" target="_blank">
             <Img fluid={this.data.catalogImage} />
             <span className={s.Link__icon}>
-              <DownloadText />
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11.362 2c4.156 0 2.638 6 2.638 6s6-1.65 6 2.457v11.543h-16v-20h7.362zm.827-2h-10.189v24h20v-14.386c0-2.391-6.648-9.614-9.811-9.614zm-5.189 12.5c0-.828.672-1.5 1.501-1.5.827 0 1.499.672 1.499 1.5s-.672 1.5-1.499 1.5c-.829 0-1.501-.672-1.501-1.5zm6.5.5l-2.093 2.968-1.31-.968-3.097 4h10l-3.5-6z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="30" viewBox="0 0 46.03 52.39">
+                <path d="M46,52.39H0V41.27a2.48,2.48,0,1,1,5,0v6.16H41.07V41.27a2.48,2.48,0,1,1,5,0Z"/>
+                <path d="M11.7,21.76a3.11,3.11,0,0,1,4.41,0l3.79,3.8V3.11a3.12,3.12,0,0,1,6.23,0V25.56l3.79-3.8a3.11,3.11,0,1,1,4.4,4.4l-9.11,9.11a3.07,3.07,0,0,1-2.2.91,3.1,3.1,0,0,1-2.2-.91h0L11.7,26.16A3.12,3.12,0,0,1,11.7,21.76Z"/>
+              </svg>
             </span>
           </a>
         </PageContent>

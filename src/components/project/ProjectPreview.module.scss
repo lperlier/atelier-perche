@@ -13,9 +13,6 @@
 
   @include responsive($tabletSmall) {
     &:hover {
-      :global(.visual__container) {
-        transform:rotate(-1deg);
-      }
 
       :global(.gatsby-image-wrapper) {
         transform:scale(1.05);

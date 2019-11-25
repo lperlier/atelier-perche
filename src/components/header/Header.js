@@ -15,6 +15,7 @@ export class Header extends React.Component {
     this.state = {openMenu: false};
     this.toggleMenu = this.toggleMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
+    this.myHeader = React.createRef();
   }
 
   toggleMenu = () => {
@@ -43,7 +44,7 @@ export class Header extends React.Component {
 
     return (
 
-      <header className={s.Header}>
+      <header className={s.Header} ref={this.myHeader}>
         <Container className={s.Header__container}>
 
           <Link className={s.Brand} to="/" onClick={this.closeMenu}>

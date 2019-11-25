@@ -28,11 +28,11 @@ export class Intro extends React.Component {
     this.introTween = new TimelineMax({
       paused: true,
       onStart: () => {
-        document.body.classList.remove('is-first');
-        document.body.classList.remove('is-loading');
+        document.body.classList.remove('is--first');
+        document.body.classList.remove('is--loading');
       },
       onComplete: () => {
-        document.body.classList.remove('is-animating');
+        document.body.classList.remove('is--animating');
       },
       delay: 1.2
     });

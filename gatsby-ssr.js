@@ -1,5 +1,5 @@
 exports.onRenderBody = ({ setBodyAttributes }) => {
   setBodyAttributes({
-      className: 'is-first is-loading is-animating'
+      className: 'is--first is--loading is--animating'
     });
 };
