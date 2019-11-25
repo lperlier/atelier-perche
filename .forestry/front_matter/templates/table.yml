@@ -11,7 +11,7 @@ fields:
   type: text
   config:
     required: false
-  label: Type
+  label: type
   hidden: true
   default: table
 - type: text
