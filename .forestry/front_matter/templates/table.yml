@@ -21,3 +21,5 @@ fields:
 - type: image_gallery
   name: gallery
   label: gallery
+pages:
+- src/pages/projets/tables/ma-table.md
