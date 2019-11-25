@@ -27,7 +27,7 @@ sections:
   create: documents
   match: "**/*"
   templates:
-  - projet
+  - table
 upload_dir: src/images
 public_path: "/src/images"
 front_matter_path: ''
