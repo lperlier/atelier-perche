@@ -6,10 +6,12 @@ fields:
   name: template
   label: template
   default: projet
+  hidden: true
 - type: text
   name: type
   label: type
   default: table_basse
+  hidden: true
 - type: text
   name: title
   label: title
