@@ -1,5 +1,6 @@
 ---
 template: projet
+type: porte-revues
 title: Soligny
 gallery:
 - "/src/images/04.jpg"

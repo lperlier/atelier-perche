@@ -1,5 +1,6 @@
 ---
 template: projet
+type: table
 title: Rémalard
 gallery:
 - "/src/images/03-2.jpg"

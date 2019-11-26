@@ -7,7 +7,6 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { PageContent } from 'components/page/PageContent'
-import DownloadText from 'assets/svg/download_text.svg'
 
 import s from './catalogue.module.scss'
 
