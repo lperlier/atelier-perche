@@ -28,6 +28,27 @@ sections:
   match: "**/*"
   templates:
   - table
+- type: directory
+  path: src/pages/projets/tables-basse
+  label: Tables basse
+  create: documents
+  match: "**/*"
+  templates:
+  - projet-table-basse
+- type: directory
+  path: src/pages/projets/porte-revues
+  label: Porte revues
+  create: documents
+  match: "**/*"
+  templates:
+  - projet-porte-revue
+- type: directory
+  path: src/pages/projets/amenagements-interieur
+  label: Aménagements intérieur
+  create: documents
+  match: "**/*"
+  templates:
+  - projet-amenagements
 upload_dir: src/images
 public_path: "/src/images"
 front_matter_path: ''
