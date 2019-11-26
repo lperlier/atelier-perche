@@ -6,10 +6,12 @@ fields:
   name: template
   label: Template
   default: projet
+  hidden: true
 - type: text
   name: type
   label: Type
   default: library
+  hidden: true
 - name: projet
   type: include
   config: {}
