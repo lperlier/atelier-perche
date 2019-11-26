@@ -4,17 +4,16 @@ hide_body: false
 fields:
 - type: text
   name: template
-  label: template
+  label: Template
   default: projet
   hidden: true
 - type: text
   name: type
-  label: type
+  label: Type
   default: table_basse
   hidden: true
-- type: text
-  name: title
-  label: title
-- type: image_gallery
-  name: gallery
-  label: gallery
+- name: projet
+  type: include
+  config: {}
+  template: projet
+  label: Projet
