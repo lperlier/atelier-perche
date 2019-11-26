@@ -10,3 +10,8 @@ fields:
   name: type
   label: Type
   default: library
+- name: projet
+  type: include
+  config: {}
+  template: projet
+  label: Projet
