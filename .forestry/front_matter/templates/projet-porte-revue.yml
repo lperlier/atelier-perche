@@ -4,7 +4,7 @@ hide_body: false
 fields:
 - type: text
   name: template
-  label: template
+  label: Template
   default: projet
 - type: text
   name: type
