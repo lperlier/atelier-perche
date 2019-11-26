@@ -43,6 +43,13 @@ sections:
   templates:
   - projet-porte-revue
 - type: directory
+  path: src/pages/projets/bibliotheques
+  label: Bibliothèques
+  create: documents
+  match: "**/*"
+  templates:
+  - projet-bibliotheque
+- type: directory
   path: src/pages/projets/amenagements-interieur
   label: Aménagements intérieur
   create: documents

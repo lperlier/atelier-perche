@@ -22,5 +22,3 @@ fields:
   config: {}
   template: projet
   label: Projet
-pages:
-- src/pages/projets/tables/ma-table.md
