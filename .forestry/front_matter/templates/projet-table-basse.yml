@@ -8,6 +8,7 @@ fields:
 - type: text
   name: type
   label: type
+  default: table_basse
 - type: text
   name: title
   label: title
