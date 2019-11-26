@@ -3,11 +3,18 @@ label: Projet:Table
 hide_body: false
 display_field: title
 fields:
+- name: template
+  type: text
+  config:
+    required: false
+  label: Template
+  default: projet
+  hidden: true
 - name: type
   type: text
   config:
     required: false
-  label: type
+  label: Type
   hidden: true
   default: table
 - name: projet
