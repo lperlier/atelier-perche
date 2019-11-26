@@ -15,13 +15,6 @@ sections:
 - type: heading
   label: Projets
 - type: directory
-  path: src/pages/projets
-  label: Projets
-  create: documents
-  match: "**/*"
-  templates:
-  - projet
-- type: directory
   path: src/pages/projets/tables
   label: Tables
   create: documents
