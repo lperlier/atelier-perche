@@ -1,0 +1,16 @@
+---
+label: Projet:Porte revue
+hide_body: false
+fields:
+- type: text
+  name: template
+  label: template
+- type: text
+  name: type
+  label: type
+- type: text
+  name: title
+  label: title
+- type: image_gallery
+  name: gallery
+  label: gallery
