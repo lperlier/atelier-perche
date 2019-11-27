@@ -10,7 +10,7 @@ fields:
 - type: text
   name: type
   label: Type
-  default: library
+  default: Bibliothèque
   hidden: true
 - name: projet
   type: include
