@@ -10,7 +10,7 @@ fields:
 - type: text
   name: type
   label: Type
-  default: table_basse
+  default: Table basse
   hidden: true
 - name: projet
   type: include
