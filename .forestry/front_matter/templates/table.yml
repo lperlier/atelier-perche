@@ -16,7 +16,7 @@ fields:
     required: false
   label: Type
   hidden: true
-  default: table
+  default: Tables
 - name: projet
   type: include
   config: {}
