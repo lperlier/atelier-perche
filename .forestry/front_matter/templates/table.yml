@@ -8,8 +8,8 @@ fields:
   default: projet
   hidden: true
 - type: text
-  name: type
-  label: Type
+  name: project_cat
+  label: Categorie
   default: Tables
   hidden: true
 - name: projet
