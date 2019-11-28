@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-const useProjects = () => {
+const useProjects = (cat) => {
 
   const data = useStaticQuery( graphql`
     query {
@@ -13,6 +13,7 @@ const useProjects = () => {
             }
             frontmatter {
               title
+              type
               gallery {
                 childImageSharp {
                   fluid {
@@ -30,8 +31,20 @@ const useProjects = () => {
     }
   `);
 
-  return data.allMarkdownRemark.edges.map(project => ({
+  let dataResults;
+  if(cat) {
+    dataResults = data.allMarkdownRemark.edges.filter(project => {
+      return project.node.frontmatter.type === cat;
+    });
+  } else {
+    dataResults = data.allMarkdownRemark.edges;
+  }
+
+  console.log(dataResults);
+
+  return dataResults.map(project => ({
       title : project.node.frontmatter.title,
+      type : project.node.frontmatter.type,
       description : project.node.frontmatter.description,
       randomImage : project.node.frontmatter.gallery[Math.floor(Math.random()*project.node.frontmatter.gallery.length)].childImageSharp.fluid,
       slug : project.node.fields.slug

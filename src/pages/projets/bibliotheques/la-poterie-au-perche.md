@@ -1,6 +1,6 @@
 ---
 template: projet
-type: bibliotheque
+type: Bibliothèques
 title: La Poterie au Perche
 gallery:
 - "/src/images/03.jpg"

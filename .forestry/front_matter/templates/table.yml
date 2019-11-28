@@ -1,22 +1,17 @@
 ---
 label: Projet:Table
 hide_body: false
-display_field: title
 fields:
-- name: template
-  type: text
-  config:
-    required: false
+- type: text
+  name: template
   label: Template
   default: projet
   hidden: true
-- name: type
-  type: text
-  config:
-    required: false
+- type: text
+  name: type
   label: Type
-  hidden: true
   default: Tables
+  hidden: true
 - name: projet
   type: include
   config: {}

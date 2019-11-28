@@ -40,6 +40,10 @@
         @include responsive($tabletSmall) {
           margin-right:120px;
         }
+
+        :global(.HomePage) &, :global(.ProjetsPage) & {
+          margin-right: 10px;
+        }
       }
 
       &+* {

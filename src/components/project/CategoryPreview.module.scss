@@ -1,0 +1,56 @@
+@import '~styles/config';
+
+.CategoryPreview {
+  position: relative;
+  width:100%;
+  display:block;
+  text-decoration: none!important;
+
+  @include responsive($tabletSmall) {
+    width:20vw;
+    min-width:280px;
+  }
+
+  @include responsive($tabletSmall) {
+    &:hover {
+
+      :global(.gatsby-image-wrapper) {
+        transform:scale(1.05);
+      }
+
+      .ProjectPreview__header {
+        transform:translateX(0%);
+        h3 {
+          transform:translateX(0%);
+        }
+      }
+    }
+  }
+
+  &:global(.is--paysage) {
+    @include responsive($tabletSmall) {
+      min-width:460px;
+    }
+  }
+
+  :global(.visual__container) {
+    position: relative;
+    overflow: hidden;
+    transition:transform 1200ms $easeOutExpo;
+  }
+
+  :global(.gatsby-image-wrapper) {
+    transform:scale(1.01);
+    transition:transform 1200ms $easeOutExpo;
+  }
+
+  :global(.ProjetsCat) {
+    position: absolute;
+    font-size: 2vw;
+    left: 40px;
+    bottom: 40px;
+    top: initial;
+    z-index: 10;
+    transform: none;
+  }
+}

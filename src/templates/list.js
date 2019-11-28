@@ -8,7 +8,9 @@ import useProjects from 'hooks/use-projects';
 
 function List(props) {
 
-    const projects = useProjects();
+    let category;
+    props.data.pageData.frontmatter.title === "Projets" ? category = null : category = props.data.pageData.frontmatter.title;
+    const projects = useProjects(category);
 
     return (
 
@@ -21,9 +23,26 @@ function List(props) {
             ))}
 
         </ScrollContainer>
+
+        {(category != null &&
+          <span className="ProjetsCat">{category}</span>
+        )}
       </main>
 
     )
 }
 
 export default List;
+
+export const pageQuery = graphql`
+  query ProjetByType($slug: String!) {
+    pageData:markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      excerpt
+      html
+      frontmatter {
+        title
+      }
+    }
+  }
+`

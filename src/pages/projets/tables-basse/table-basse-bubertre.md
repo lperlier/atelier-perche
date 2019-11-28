@@ -1,6 +1,6 @@
 ---
 template: projet
-type: table-basse
+type: Tables basse
 title: Bubertré
 gallery:
 - "/src/images/projet_01.jpg"

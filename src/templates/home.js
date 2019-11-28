@@ -2,13 +2,13 @@ import React from 'react'
 import Helmet from 'react-helmet';
 
 import { ScrollContainer } from 'components/container/ScrollContainer'
-import { ProjectPreview } from 'components/project/ProjectPreview'
+import { ProjectCategory } from 'components/project/ProjectCategory'
 
-import useProjects from 'hooks/use-projects';
+import useCategories from 'hooks/use-categories';
 
 function Homepage(props) {
 
-    const projects = useProjects();
+    const category = useCategories();
 
     return (
 
@@ -16,8 +16,8 @@ function Homepage(props) {
         <Helmet title="Accueil" />
         <ScrollContainer>
 
-            {projects.map((project, index) => (
-                <ProjectPreview key={index} project={project}/>
+            {category.map((category, index) => (
+                <ProjectCategory key={index} category={category}/>
             ))}
 
         </ScrollContainer>

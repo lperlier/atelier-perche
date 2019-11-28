@@ -80,7 +80,6 @@ export class ScrollContainer extends React.Component {
     }
 
     this.lastScrollX = lerp(this.lastScrollX, this.scrollX, 0.8);
-    console.log(this.lastScrollX);
     this.myScrollContainer.current.scrollLeft = this.lastScrollX;
 
   }
