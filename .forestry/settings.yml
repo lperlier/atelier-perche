@@ -22,8 +22,8 @@ sections:
   templates:
   - table
 - type: directory
-  path: src/pages/projets/tables-basse
-  label: Tables basse
+  path: src/pages/projets/tables-basses
+  label: Tables basses
   create: documents
   match: "**/*"
   templates:
@@ -43,8 +43,8 @@ sections:
   templates:
   - projet-bibliotheque
 - type: directory
-  path: src/pages/projets/amenagements-interieur
-  label: Aménagements intérieur
+  path: src/pages/projets/amenagements-interieurs
+  label: Aménagements intérieurs
   create: documents
   match: "**/*"
   templates:
