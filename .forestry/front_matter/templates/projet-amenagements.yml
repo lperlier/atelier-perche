@@ -17,3 +17,5 @@ fields:
   config: {}
   template: projet
   label: Projet
+pages:
+- src/pages/projets/amenagements-interieurs/mon-interieur.md
