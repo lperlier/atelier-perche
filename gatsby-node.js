@@ -1,4 +1,5 @@
 const path = require('path')
+const _ = require("lodash")
 const { createFilePath } = require('gatsby-source-filesystem')
 
 function isIndexPage(post) {
@@ -11,8 +12,8 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     const templates = {
       home: path.resolve('./src/templates/home.js'),
-      list: path.resolve('./src/templates/list.js'),
-      page: path.resolve('./src/templates/page.js'),
+      projets: path.resolve('./src/templates/projets.js'),
+      category: path.resolve('./src/templates/category.js'),
       projet: path.resolve('./src/templates/projet.js'),
       contact: path.resolve('./src/templates/contact.js'),
       catalogue: path.resolve('./src/templates/catalogue.js')
@@ -23,7 +24,7 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            allMarkdownRemark(
+            allPages:allMarkdownRemark(
               sort: { fields: [frontmatter___title], order: DESC }
               limit: 1000
             ) {
@@ -41,6 +42,11 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
+            catsGroup: allMarkdownRemark(limit: 2000) {
+              group(field: frontmatter___project_cat) {
+                fieldValue
+              }
+            }
           }
         `
       ).then(result => {
@@ -50,8 +56,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         // create the posts
-        const posts = result.data.allMarkdownRemark.edges
-
+        const posts = result.data.allPages.edges
         for (post of posts) {
           let postContext = {
             slug: post.node.fields.slug,
@@ -90,6 +95,19 @@ exports.createPages = ({ graphql, actions }) => {
             context: postContext,
           })
         }
+
+        // create categories data from query
+        const cats = result.data.catsGroup.group;
+        // Make tag pages
+        cats.forEach(cat => {
+          createPage({
+            path: `/projets/${_.kebabCase(cat.fieldValue)}/`,
+            component: templates.category,
+            context: {
+              category: cat.fieldValue,
+            },
+          })
+        })
       })
     )
   })

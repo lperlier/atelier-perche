@@ -22,7 +22,7 @@
     > * {
       @include responsive($tabletSmall) {
         width:auto;
-        min-width:340px;
+        min-width:320px;
       }
 
       @include responsive($tabletSmall, max) {
@@ -41,8 +41,8 @@
           margin-right:120px;
         }
 
-        :global(.HomePage) &, :global(.ProjetsPage) & {
-          margin-right: 10px;
+        :global(.HomePage) & {
+          margin-right: -10px;
         }
       }
 

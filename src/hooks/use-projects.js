@@ -13,7 +13,7 @@ const useProjects = (cat) => {
             }
             frontmatter {
               title
-              type
+              project_cat
               gallery {
                 childImageSharp {
                   fluid {
@@ -40,11 +40,9 @@ const useProjects = (cat) => {
     dataResults = data.allMarkdownRemark.edges;
   }
 
-  console.log(dataResults);
-
   return dataResults.map(project => ({
       title : project.node.frontmatter.title,
-      type : project.node.frontmatter.type,
+      category : project.node.frontmatter.project_cat,
       description : project.node.frontmatter.description,
       randomImage : project.node.frontmatter.gallery[Math.floor(Math.random()*project.node.frontmatter.gallery.length)].childImageSharp.fluid,
       slug : project.node.fields.slug

@@ -10,7 +10,7 @@ fields:
 - type: text
   name: type
   label: Type
-  default: Aménagements intérieur
+  default: Aménagements intérieurs
   hidden: true
 - name: projet
   type: include

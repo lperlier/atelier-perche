@@ -1,0 +1,16 @@
+@import '~styles/config';
+
+.ProjectCatTitle {
+  position: fixed;
+  top:50%;
+  left:5%;
+  transform:translate(0%, -50%);
+  font-size:28vw;
+  color:red;
+  z-index: -1;
+  color:darken($white, 3%);
+  font-weight: 300;
+  line-height: 0.7;
+  pointer-events: none;
+  white-space: nowrap;
+}

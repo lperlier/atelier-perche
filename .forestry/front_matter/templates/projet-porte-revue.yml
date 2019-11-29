@@ -10,7 +10,7 @@ fields:
 - type: text
   name: project_cat
   label: Categorie
-  default: Porte revues
+  default: Porte-revues
   hidden: true
 - name: projet
   type: include

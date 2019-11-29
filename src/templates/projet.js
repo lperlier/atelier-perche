@@ -20,7 +20,7 @@ export class Project extends React.Component {
 
     this.data = {
       title : props.data.pageData.frontmatter.title,
-      type : props.data.pageData.frontmatter.type,
+      type : props.data.pageData.frontmatter.project_cat,
       html : props.data.pageData.html,
       gallery : props.data.pageData.frontmatter.gallery
     };
@@ -131,7 +131,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        type
+        project_cat
         gallery {
           childImageSharp {
             fluid(maxWidth: 1600, quality: 80) {

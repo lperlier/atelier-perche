@@ -1,7 +1,7 @@
 ---
 template: projet
 project_cat: Tables
-title: Rémalard
+title: Ma Table
 gallery:
 - "/src/images/03-2.jpg"
 - "/src/images/05.jpg"

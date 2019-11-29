@@ -1,30 +1,16 @@
 import { useStaticQuery, graphql } from "gatsby"
+import kebabCase from "lodash/kebabCase"
 
 const useCategories = (cat) => {
 
   const data = useStaticQuery( graphql`
     query {
-      categoriesData:allMarkdownRemark(filter: {fields: {slug: {regex: "/projet/"}}, fileAbsolutePath: {regex: "/index.md/"}}) {
-        edges {
-          node {
-            id
-            fields {slug}
+      allCats:allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___project_cat) {
+          fieldValue
+          totalCount
+          nodes {
             frontmatter {
-              title
-            }
-          }
-        }
-      }
-      projectsData:allMarkdownRemark(filter: {frontmatter: {template : {eq : "projet" }}}) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              type
               gallery {
                 childImageSharp {
                   fluid {
@@ -43,28 +29,19 @@ const useCategories = (cat) => {
   `);
 
 
+  const resultCategories = data.allCats.group.map(category => {
+      const randomProject = category.nodes[Math.floor(Math.random() * category.nodes.length)];
+      const randomImage = randomProject.frontmatter.gallery[Math.floor(Math.random() * randomProject.frontmatter.gallery.length)].childImageSharp.fluid;
 
-  const resultCategories = data.categoriesData.edges.filter(category => {
-
-    const dataProjects = data.projectsData.edges.filter(project => {
-      return project.node.frontmatter.type === category.node.frontmatter.title;
-    });
-
-    const randomProject = dataProjects[Math.floor(Math.random()*dataProjects.length)];
-    if (randomProject) {
-      const randomImage = randomProject.node.frontmatter.gallery[Math.floor(Math.random() * randomProject.node.frontmatter.gallery.length)].childImageSharp.fluid;
-      category.randomImage = randomImage;
+      return category = {
+        slug : `/projets/${kebabCase(category.fieldValue)}/`,
+        title : category.fieldValue,
+        randomImage : randomImage
+      }
     }
+  )
 
-    return dataProjects.length > 0;
-
-  });
-
-  return resultCategories.map(category => ({
-      title : category.node.frontmatter.title,
-      slug : category.node.fields.slug,
-      randomImage : category.randomImage,
-  }));
+  return resultCategories;
 
 };
 

@@ -10,7 +10,7 @@ fields:
 - type: text
   name: project_cat
   label: Categorie
-  default: Tables basse
+  default: Tables basses
   hidden: true
 - name: projet
   type: include

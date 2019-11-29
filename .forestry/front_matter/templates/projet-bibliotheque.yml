@@ -10,7 +10,7 @@ fields:
 - type: text
   name: project_cat
   label: Categorie
-  default: Bibliothèque
+  default: Bibliothèques
   hidden: true
 - name: projet
   type: include
