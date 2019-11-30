@@ -30,9 +30,14 @@
 
 .BackLink {
   @extend .Link;
-  position: absolute;
-  bottom:40px;
-  right:40px;
   z-index: 10;
-  color:$base;
+  color: $base;
+  margin-bottom: 20px;
+
+  @include responsive($tabletSmall) {
+    position: absolute;
+    bottom:40px;
+    right:40px;
+    margin-bottom: 0;
+  }
 }

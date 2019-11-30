@@ -61,6 +61,12 @@ body {
   }
 }
 
+main {
+  @include responsive($tabletSmall, max) {
+    padding: 140px 30px 30px;
+  }
+}
+
 .mask {
   overflow: hidden;
 }

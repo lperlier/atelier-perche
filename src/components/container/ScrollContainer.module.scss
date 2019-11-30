@@ -10,7 +10,6 @@
   }
 
   &__inner {
-    padding: 140px 30px 30px;
 
     @include responsive($tabletSmall) {
       padding: 140px;

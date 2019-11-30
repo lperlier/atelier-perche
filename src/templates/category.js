@@ -1,7 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet';
+import { normalize } from "utils/utils.js";
 
-import { TweenMax, Expo } from "gsap";
+import { TimelineMax, TweenMax, Expo, Power0 } from "gsap";
 import { Link, graphql } from 'gatsby'
 
 import { ScrollContainer } from 'components/container/ScrollContainer'
@@ -16,6 +17,8 @@ class Category extends React.Component {
       this.edges = this.props.data.allMarkdownRemark.edges;
 
       this.myBackLink = React.createRef();
+      this.myScrollContainer = React.createRef();
+      this.myCatTitle = React.createRef();
 
     }
 
@@ -25,10 +28,17 @@ class Category extends React.Component {
 
       TweenMax.fromTo(this.myBackLink.current, 1.4, { y: "40px", opacity:0}, { y:"0", opacity:1, ease: Expo.easeOut, clearProps:"all"}, 0.5);
 
+      this.CatTitleTimeline = new TimelineMax({paused:true});
+      this.CatTitleTimeline.fromTo(this.myCatTitle.current, 1, {x: 0 }, {x: -1 * (this.myCatTitle.current.offsetWidth - window.innerWidth), ease:Power0.easeNone }, 0);
+
     }
 
     getScroll(scroll) {
-      console.log(scroll);
+
+        if (this.myScrollContainer.current.myScrollContainer.current.querySelector(":scope > *").offsetWidth < this.myScrollContainer.current.myScrollContainer.current.offsetWidth) return;
+      const scrollX = normalize(scroll, 0, this.myScrollContainer.current.myScrollContainer.current.querySelector(":scope > *").offsetWidth - this.myScrollContainer.current.myScrollContainer.current.offsetWidth);
+      this.CatTitleTimeline.progress(scrollX);
+
     }
 
     render(){
@@ -40,7 +50,7 @@ class Category extends React.Component {
 
           <Link to="/projets" className="BackLink" ref={this.myBackLink}>Retour</Link>
 
-          <ScrollContainer returnScroll={this.getScroll}>
+          <ScrollContainer ref={this.myScrollContainer} returnScroll={this.getScroll.bind(this)}>
 
               {this.edges.map(({ node }) => {
 
@@ -59,7 +69,9 @@ class Category extends React.Component {
           </ScrollContainer>
 
 
-          <ProjectCatTitle>{this.category}</ProjectCatTitle>
+          <ProjectCatTitle>
+            <span ref={this.myCatTitle}>{this.category}</span>
+          </ProjectCatTitle>
         </main>
 
       )
