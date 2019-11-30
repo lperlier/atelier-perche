@@ -1,47 +1,72 @@
 import React from 'react'
 import Helmet from 'react-helmet';
 
-import { graphql } from 'gatsby'
+import { TweenMax, Expo } from "gsap";
+import { Link, graphql } from 'gatsby'
 
 import { ScrollContainer } from 'components/container/ScrollContainer'
 import { ProjectPreview } from 'components/project/ProjectPreview'
 import { ProjectCatTitle } from 'components/project/ProjectCatTitle'
 
-function List({ pageContext, data }) {
+class Category extends React.Component {
 
-    const { category } = pageContext
-    const { edges } = data.allMarkdownRemark;
+    constructor(props) {
+      super(props);
+      this.category = this.props.pageContext.category
+      this.edges = this.props.data.allMarkdownRemark.edges;
 
-    return (
+      this.myBackLink = React.createRef();
 
-      <main className="Category__Page">
-        <Helmet title={category} />
-        <ScrollContainer>
+    }
 
-            {edges.map(({ node }) => {
+    componentDidMount() {
 
-              const project = {
-                slug : node.fields.slug,
-                title : node.frontmatter.title,
-                randomImage : node.frontmatter.gallery[Math.floor(Math.random()*node.frontmatter.gallery.length)].childImageSharp.fluid
-              }
+      if (process.env.NODE_ENV === "development") console.log('Page Projets');
 
-              return (
-                <ProjectPreview key={project.slug} project={project} />
-              )
+      TweenMax.fromTo(this.myBackLink.current, 1.4, { y: "40px", opacity:0}, { y:"0", opacity:1, ease: Expo.easeOut, clearProps:"all"}, 0.5);
 
-            })}
+    }
 
-        </ScrollContainer>
+    getScroll(scroll) {
+      console.log(scroll);
+    }
+
+    render(){
+
+      return(
+
+        <main className="Category__Page">
+          <Helmet title={this.category} />
+
+          <Link to="/projets" className="BackLink" ref={this.myBackLink}>Retour</Link>
+
+          <ScrollContainer returnScroll={this.getScroll}>
+
+              {this.edges.map(({ node }) => {
+
+                const project = {
+                  slug : node.fields.slug,
+                  title : node.frontmatter.title,
+                  randomImage : node.frontmatter.gallery[Math.floor(Math.random()*node.frontmatter.gallery.length)].childImageSharp.fluid
+                }
+
+                return (
+                  <ProjectPreview key={project.slug} project={project} />
+                )
+
+              })}
+
+          </ScrollContainer>
 
 
-        <ProjectCatTitle>{category}</ProjectCatTitle>
-      </main>
+          <ProjectCatTitle>{this.category}</ProjectCatTitle>
+        </main>
 
-    )
+      )
+    }
 }
 
-export default List;
+export default Category;
 
 export const pageQuery = graphql`
   query PageByCat($category: String) {

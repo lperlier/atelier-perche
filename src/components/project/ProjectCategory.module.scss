@@ -5,10 +5,11 @@
   width:100%;
   display:block;
   text-decoration: none!important;
+  z-index: 10;
 
   @include responsive($tabletSmall) {
-    width:20vw;
-    min-width:280px;
+    width:17vw;
+    min-width:240px;
   }
 
   @include responsive($tabletSmall) {
@@ -20,7 +21,8 @@
   }
 
   &__title {
-    font-size: 3.2rem;
+    font-size: 3rem;
+    line-height: 1;
     color: $white;
     position: absolute;
     bottom: 30px;

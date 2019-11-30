@@ -6,7 +6,7 @@ import { ProjectCategory } from 'components/project/ProjectCategory'
 
 import useCategories from 'hooks/use-categories';
 
-function Homepage(props) {
+function Projets(props) {
 
     const categories = useCategories();
 
@@ -26,4 +26,4 @@ function Homepage(props) {
     )
 }
 
-export default Homepage;
+export default Projets;

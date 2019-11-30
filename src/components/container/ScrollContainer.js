@@ -67,6 +67,8 @@ export class ScrollContainer extends React.Component {
       this.lastScrollX = e.currentTarget.scrollLeft;
     }
 
+    if (this.props.returnScroll) this.props.returnScroll(this.lastScrollX);
+
   }
 
   onRender() {

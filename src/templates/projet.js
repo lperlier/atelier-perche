@@ -1,10 +1,11 @@
 import React from 'react'
 import Helmet from 'react-helmet';
+import kebabCase from "lodash/kebabCase"
 
 import { TimelineMax, Expo } from "gsap";
 import Modal from 'react-modal';
 
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { ScrollContainer } from 'components/container/ScrollContainer'
@@ -20,7 +21,7 @@ export class Project extends React.Component {
 
     this.data = {
       title : props.data.pageData.frontmatter.title,
-      type : props.data.pageData.frontmatter.project_cat,
+      category : props.data.pageData.frontmatter.project_cat,
       html : props.data.pageData.html,
       gallery : props.data.pageData.frontmatter.gallery
     };
@@ -32,6 +33,7 @@ export class Project extends React.Component {
 
     this.myProjectHeader = React.createRef();
     this.myProjectModal = React.createRef();
+    this.myBackLink = React.createRef();
     this.ProjectTween = null;
     this.ModalOpenTween = null;
     this.ModalCloseTween = null;
@@ -47,7 +49,8 @@ export class Project extends React.Component {
     this.ProjectTween = new TimelineMax({
       paused : true
     });
-    this.ProjectTween.fromTo(this.myProjectHeader.current.querySelectorAll(":scope > *"), 1.4, { y: "40px", opacity:0}, { y:"0", opacity:1, ease: Expo.easeOut, clearProps:"all"}, 0.15, 0);
+    this.ProjectTween.staggerFromTo(this.myProjectHeader.current.querySelectorAll(":scope > *"), 1.4, { y: "40px", opacity:0}, { y:"0", opacity:1, ease: Expo.easeOut, clearProps:"all"}, 0.15, 0);
+    this.ProjectTween.fromTo(this.myBackLink.current, 1.4, { y: "40px", opacity:0}, { y:"0", opacity:1, ease: Expo.easeOut, clearProps:"all"}, 0.5);
     this.ProjectTween.play();
 
   }
@@ -97,6 +100,8 @@ export class Project extends React.Component {
       <article className={s.Project}>
 
         <Helmet title={this.data.title} />
+
+        <Link to={`/projets/${kebabCase(this.data.category)}/`} className="BackLink" ref={this.myBackLink}>Retour</Link>
 
         <div className={s.Project__header} ref={this.myProjectHeader}>
           <h1>{this.data.title}</h1>
