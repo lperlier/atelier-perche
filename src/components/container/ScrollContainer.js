@@ -27,7 +27,13 @@ export class ScrollContainer extends React.Component {
   componentDidMount() {
 
     this.myScrollContainerTween = new TimelineMax({
-      paused : true
+      paused : true,
+      onStart : () => {
+        this.myScrollContainer.current.style.overflow = "hidden";
+      },
+      onComplete: () => {
+        this.myScrollContainer.current.style.overflow = "auto";
+      }
     });
 
     this.myScrollContainerTween.staggerFrom(this.myScrollContainer.current.querySelectorAll(':scope > * > *'), 2.4, { x:"100vw", ease: Expo.easeOut, clearProps:"transform"}, 0.05, 0);
@@ -49,9 +55,9 @@ export class ScrollContainer extends React.Component {
     let delta;
 
     if ('wheelDelta' in e) {
-      delta = e.wheelDelta / 7;
+      delta = e.wheelDelta / 5;
     } else {
-      delta = -1 * e.deltaY;
+      delta = -0.5 * e.deltaY;
     }
 
     this.scrollX = clamp(this.scrollX - delta, 0, this.myScrollContainer.current.querySelector(':scope > *').offsetWidth - window.innerWidth);
