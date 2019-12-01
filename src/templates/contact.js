@@ -24,8 +24,7 @@ export class About extends React.Component {
       html : props.data.pageData.html,
       adresse : props.data.pageData.frontmatter.adresse,
       portrait : props.data.pageData.frontmatter.image,
-      contact : props.data.pageData.frontmatter.contact_email,
-      contact2 : props.data.pageData.frontmatter.contact_email_2
+      contacts : props.data.pageData.frontmatter.contact_emails,
     }
 
     this.myPageContent = React.createRef();
@@ -73,8 +72,13 @@ export class About extends React.Component {
               <YSWYWContent html={this.data.html}/>
               <div className={s.Contact__address}>
                 <address dangerouslySetInnerHTML={{ __html: this.data.adresse }} />
-                <a href={`mailto:${this.data.contact}`} className="Link" rel="noopener noreferrer">{this.data.contact}</a><br/>
-                <a href={`mailto:${this.data.contact}`} className="Link" rel="noopener noreferrer">{this.data.contact2}</a>
+                <ul className={s.Contact__emails}>
+                  {this.data.contacts.map(contact => (
+                    <li className={s.Contact__email} key={contact.contact_name}>
+                      <strong>{contact.contact_name} :</strong> <a href={`mailto:${contact.contact_email}`} className="Link" rel="noopener noreferrer">{contact.contact_email}</a>
+                    </li>
+                  ))}
+                </ul>
               </div>
               <Socials/>
             </Col>
@@ -98,8 +102,10 @@ export const pageQuery = graphql`
       frontmatter {
         title
         adresse
-        contact_email
-        contact_email_2
+        contact_emails {
+          contact_name
+          contact_email
+        }
         image {
           childImageSharp {
             fluid {

@@ -12,7 +12,7 @@ function Homepage(props) {
 
     return (
 
-      <main className="HomePage">
+      <main className="Home__page">
         <Helmet title="Accueil" />
         <ScrollContainer>
 

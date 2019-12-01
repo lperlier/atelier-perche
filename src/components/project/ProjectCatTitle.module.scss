@@ -16,10 +16,10 @@
 
   @include responsive($tabletSmall, max) {
     position: absolute;
-    top: 180px;
-    left: -20px;
-    transform:translate(0%, -50%);
-    font-size:20vw;
+    top: 125px;
+    left: 30px;
+    transform:translate(0%, 0%);
+    font-size:12vw;
     line-height: 1;
     white-space: normal;
   }

@@ -6,11 +6,6 @@
   width:100%;
   display:block;
 
-  @include responsive($tabletSmall) {
-    width:20vw;
-    min-width:280px;
-  }
-
   &:global(.is--paysage) {
     @include responsive($tabletSmall) {
       width:30vw;

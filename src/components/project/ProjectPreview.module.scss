@@ -53,6 +53,7 @@
 
   :global(.gatsby-image-wrapper) {
     transform:scale(1.01);
+    background: $fontColor;
     transition:transform 1200ms $easeOutExpo;
   }
 

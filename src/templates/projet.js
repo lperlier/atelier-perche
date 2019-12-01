@@ -50,7 +50,7 @@ export class Project extends React.Component {
       paused : true
     });
     this.ProjectTween.staggerFromTo(this.myProjectHeader.current.querySelectorAll(":scope > *"), 1.4, { y: "40px", opacity:0}, { y:"0", opacity:1, ease: Expo.easeOut, clearProps:"all"}, 0.15, 0);
-    this.ProjectTween.fromTo(this.myBackLink.current, 1.4, { y: "40px", opacity:0}, { y:"0", opacity:1, ease: Expo.easeOut, clearProps:"all"}, 0.5);
+    this.ProjectTween.fromTo(this.myBackLink.current, 1.4, { x: -40, opacity:0}, { x:0, opacity:1, ease: Expo.easeOut, clearProps:"all"}, 0.5);
     this.ProjectTween.play();
 
   }
@@ -110,7 +110,7 @@ export class Project extends React.Component {
 
         <ScrollContainer className={s.Project__scrollcontainer}>
           {this.data.gallery.map((image, index) => (
-            <button className={s.Project__item} key={index} onClick={() => this.openModal(image)} >
+            <button className={s.Project__item} key={index} onClick={() => this.openModal(image)} aria-label="Agrandir">
               <ProjectVisual img={image.childImageSharp.fluid} />
             </button>
           ))}

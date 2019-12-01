@@ -26,7 +26,7 @@ class Category extends React.Component {
 
       if (process.env.NODE_ENV === "development") console.log('Page Projets');
 
-      TweenMax.fromTo(this.myBackLink.current, 1.4, { y: "40px", opacity:0}, { y:"0", opacity:1, ease: Expo.easeOut, clearProps:"all"}, 0.5);
+      TweenMax.fromTo(this.myBackLink.current, 1.4, { x: -40, opacity:0}, { x:0, opacity:1, ease: Expo.easeOut, clearProps:"all"}, 0.5);
 
       this.CatTitleTimeline = new TimelineMax({paused:true});
       this.CatTitleTimeline.fromTo(this.myCatTitle.current, 1, {x: 0 }, {x: -1 * (this.myCatTitle.current.offsetWidth - window.innerWidth), ease:Power0.easeNone }, 0);

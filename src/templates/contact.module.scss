@@ -2,6 +2,12 @@
 
 .Contact {
 
+  &__page {
+    @include responsive($tabletSmall, max) {
+      padding:0!important;
+    }
+  }
+
   &__content {
 
     @include responsive($tablet) {
@@ -16,6 +22,14 @@
 
   &__address {
     margin-top:40px;
+  }
+
+  &__emails {
+    margin-top:10px;
+
+    strong {
+      font-weight: bold;
+    }
   }
 
   &__visual {
