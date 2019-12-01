@@ -10,6 +10,11 @@ email: br@atelierperche.com
 image: "/src/images/portrait.jpg"
 contact_email: br@atelierperche.com
 contact_email_2: nd@atelierperche.com
+contact_emails:
+- contact_name: Bastien Ruffray
+  contact_email: br@atelierperche.com
+- contact_name: Nilima Davroux
+  contact_email: nd@atelierperche.com
 
 ---
 ### NOTRE MISSION
