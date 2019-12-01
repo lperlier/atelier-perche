@@ -23,24 +23,6 @@ fields:
     schema:
       format: html-blocks
   label: Adresse
-- name: contact_emails
-  type: field_group_list
-  fields:
-  - name: contact_email
-    type: text
-    config:
-      required: false
-    label: Email
-  - name: contact_name
-    type: text
-    config:
-      required: false
-    label: Nom
-  config:
-    min: 
-    max: 
-    labelField: 
-  label: Emails
 - name: contact_email
   type: text
   config:
@@ -68,5 +50,23 @@ fields:
     label: Instagram
     description: Lien Instagram
   label: Socials
+- name: contact_emails
+  type: field_group_list
+  fields:
+  - name: contact_name
+    type: text
+    config:
+      required: false
+    label: Nom / Prénom
+  - name: contact_email
+    type: text
+    config:
+      required: false
+    label: Email
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Emails
 pages:
 - src/pages/contact.md
