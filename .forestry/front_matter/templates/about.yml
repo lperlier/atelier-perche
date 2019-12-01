@@ -23,6 +23,24 @@ fields:
     schema:
       format: html-blocks
   label: Adresse
+- name: contact_emails
+  type: field_group_list
+  fields:
+  - name: contact_email
+    type: text
+    config:
+      required: false
+    label: Email
+  - name: contact_name
+    type: text
+    config:
+      required: false
+    label: Nom
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Emails
 - name: contact_email
   type: text
   config:
