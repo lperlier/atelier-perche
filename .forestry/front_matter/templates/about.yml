@@ -33,23 +33,6 @@ fields:
   config:
     required: false
   label: Email de contact
-- name: socials
-  type: field_group
-  config: {}
-  fields:
-  - name: facebook
-    type: text
-    config:
-      required: false
-    label: Facebook
-    description: Lien Facebook
-  - name: instagram
-    type: text
-    config:
-      required: false
-    label: Instagram
-    description: Lien Instagram
-  label: Socials
 - name: contact_emails
   type: field_group_list
   fields:
@@ -68,5 +51,22 @@ fields:
     max: 
     labelField: 
   label: Emails
+- name: socials
+  type: field_group
+  config: {}
+  fields:
+  - name: facebook
+    type: text
+    config:
+      required: false
+    label: Facebook
+    description: Lien Facebook
+  - name: instagram
+    type: text
+    config:
+      required: false
+    label: Instagram
+    description: Lien Instagram
+  label: Socials
 pages:
 - src/pages/contact.md
