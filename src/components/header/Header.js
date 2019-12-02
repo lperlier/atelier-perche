@@ -31,13 +31,13 @@ export class Header extends React.Component {
 
     if (this.state.openMenu) {
 
-      this.setState({ openMenu: false });
-
       //Remove Class
-      document.querySelector('body').classList.remove('is--MenuOpen');
+      setTimeout(() => {
+        this.setState({ openMenu: false });
+        document.querySelector('body').classList.remove('is--MenuOpen');
+      }, 250);
 
     }
-
   }
 
   render() {
