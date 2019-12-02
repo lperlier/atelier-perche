@@ -72,5 +72,5 @@ main {
 }
 
 .gatsby-image-wrapper {
-  background:$grey;
+  background: lighten($base, 10%);
 }

@@ -40,7 +40,7 @@
           margin-right:120px;
         }
 
-        :global(.HomePage) & {
+        :global(.Home__page) &, :global(.Projets__page) & {
           margin-right:-10px;
         }
       }
