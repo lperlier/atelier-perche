@@ -1,13 +1,11 @@
 import React from 'react'
 import Helmet from 'react-helmet';
-import { normalize } from "utils/utils.js";
 
-import { TimelineMax, TweenMax, Expo, Power0 } from "gsap";
+import { TweenMax, Expo } from "gsap";
 import { Link, graphql } from 'gatsby'
 
 import { ScrollContainer } from 'components/container/ScrollContainer'
 import { ProjectPreview } from 'components/project/ProjectPreview'
-import { ProjectCatTitle } from 'components/project/ProjectCatTitle'
 
 class Category extends React.Component {
 
@@ -18,7 +16,6 @@ class Category extends React.Component {
 
       this.myBackLink = React.createRef();
       this.myScrollContainer = React.createRef();
-      this.myCatTitle = React.createRef();
 
     }
 
@@ -27,17 +24,6 @@ class Category extends React.Component {
       if (process.env.NODE_ENV === "development") console.log('Page Projets');
 
       TweenMax.fromTo(this.myBackLink.current, 1.4, { x: -40, opacity:0}, { x:0, opacity:1, ease: Expo.easeOut, clearProps:"all"}, 0.5);
-
-      this.CatTitleTimeline = new TimelineMax({paused:true});
-      this.CatTitleTimeline.fromTo(this.myCatTitle.current, 1, {x: 0 }, {x: -1 * (this.myCatTitle.current.offsetWidth - window.innerWidth), ease:Power0.easeNone }, 0);
-
-    }
-
-    getScroll(scroll) {
-
-        if (this.myScrollContainer.current.myScrollContainer.current.querySelector(":scope > *").offsetWidth < this.myScrollContainer.current.myScrollContainer.current.offsetWidth) return;
-      const scrollX = normalize(scroll, 0, this.myScrollContainer.current.myScrollContainer.current.querySelector(":scope > *").offsetWidth - this.myScrollContainer.current.myScrollContainer.current.offsetWidth);
-      this.CatTitleTimeline.progress(scrollX);
 
     }
 
@@ -50,7 +36,7 @@ class Category extends React.Component {
 
           <Link to="/projets" className="BackLink" ref={this.myBackLink}>Retour</Link>
 
-          <ScrollContainer ref={this.myScrollContainer} returnScroll={this.getScroll.bind(this)}>
+          <ScrollContainer ref={this.myScrollContainer}>
 
               {this.edges.map(({ node }) => {
 
@@ -67,11 +53,6 @@ class Category extends React.Component {
               })}
 
           </ScrollContainer>
-
-
-          <ProjectCatTitle>
-            <span ref={this.myCatTitle}>{this.category}</span>
-          </ProjectCatTitle>
         </main>
 
       )
