@@ -9,4 +9,4 @@ gallery:
 - "/src/images/01-2.jpg"
 
 ---
-Ceci est mon intérieur
+Ceci est mon bel intérieur
