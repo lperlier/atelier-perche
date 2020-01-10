@@ -27,6 +27,10 @@
          display: inline-block;
       }
 
+      &:global(.has--childs) {
+        position:relative;
+      }
+
       & + & {
          margin-top:20px;
 
@@ -39,15 +43,14 @@
 
    &__link {
       position: relative;
-      opacity:1;
       font-weight:700;
-      transition:opacity 400ms $easeOutQuad;
       text-transform:uppercase;
       letter-spacing:0.1em;
       font-size:2.4rem;
       color:inherit;
       text-decoration:none;
       pointer-events: all;
+      transition:color 400ms $easeOutQuad;
 
       @include responsive($menuBreakpoint) {
          font-size:1.2rem;
@@ -56,10 +59,17 @@
       &__Active,
       &:focus,
       &:hover {
-         opacity:1;
+         @include responsive($menuBreakpoint) {
+           color: darken($fontColor, 20%);
+         }
+
          &:after {
-           transform-origin:left center;
-            transform:scaleX(1)!important;
+           transform-origin: left center;
+           transform: scaleX(1)!important;
+
+           @include responsive($menuBreakpoint) {
+             background: darken($fontColor, 20%);
+           }
          }
       }
 
@@ -73,8 +83,8 @@
          height:1px;
          background: $fontColor;
          transform:scaleX(0);
-         transform-origin:right center;
-         transition:transform 400ms $easeOutQuad;
+         transform-origin: right center;
+         transition: transform 400ms $easeOutQuad, opacity 400ms $easeOutQuad;
 
          body.showMenu & {
             @include responsive($menuBreakpoint, max) {
@@ -82,5 +92,59 @@
             }
          }
       }
+   }
+
+   &__childs {
+     text-align: left;
+     transform: translateY(10px);
+     transition:all 400ms $easeOutQuad;
+     text-align: center;
+     margin: 10px auto 40px;
+
+     @include responsive($menuBreakpoint) {
+       position: absolute;
+       top: 100%;
+       left: 0;
+       opacity: 0;
+       visibility: hidden;
+       pointer-events: none;
+       text-align: left;
+       padding-top: 10px;
+       margin: 0;
+     }
+
+     .Nav__item:hover & {
+       @include responsive($menuBreakpoint) {
+         opacity: 1;
+         visibility: visible;
+         pointer-events: all;
+         transform: translateY(0px);
+       }
+     }
+
+     > li+li {
+       margin-top: 3px;
+
+       @include responsive($menuBreakpoint) {
+         margin-top: 1px;
+       }
+     }
+
+     .Nav__link {
+       white-space: nowrap;
+
+       @include responsive($menuBreakpoint, max) {
+         font-size: 1.8rem;
+       }
+
+       &:after {
+         top: 95%;
+         background: darken($fontColor, 20%);
+       }
+
+       &:hover, &.Nav__link__Active {
+         color: darken($fontColor, 20%);
+       }
+     }
    }
 }
