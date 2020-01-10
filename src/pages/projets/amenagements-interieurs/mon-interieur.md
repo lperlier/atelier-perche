@@ -3,6 +3,8 @@ template: projet
 project_cat: Aménagements intérieurs
 title: Monceaux
 gallery:
+- "/src/images/DressingGrosPlan.jpg"
+- "/src/images/DressingCrop4.jpg"
 - "/src/images/DressingFaceCrop.jpg"
 
 ---
