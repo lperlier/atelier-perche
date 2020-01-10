@@ -1,12 +1,11 @@
 ---
 template: projet
 project_cat: Aménagements intérieurs
-title: Mon interieur
+title: Monceaux
 gallery:
-- "/src/images/03-1.jpg"
-- "/src/images/02-2.jpg"
-- "/src/images/projet_03.jpg"
-- "/src/images/01-2.jpg"
+- "/src/images/DressingGrosPlan.jpg"
+- "/src/images/DressingCrop4.jpg"
+- "/src/images/DressingFaceCrop.jpg"
 
 ---
-Ceci est mon intérieur
+Dressing avec caissons noir et blanc, portes en médium laqué de 22 mm d’épaisseur, prises de mains défoncées dans l’épaisseur des portes.

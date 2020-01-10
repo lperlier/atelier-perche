@@ -1,11 +1,11 @@
 ---
 template: projet
 project_cat: Bibliothèques
-title: La Poterie au Perche
+title: Mortagne
 gallery:
-- "/src/images/03.jpg"
-- "/src/images/02.jpg"
-- "/src/images/01.jpg"
+- "/src/images/DSC_3435.jpg"
+- "/src/images/01067996.jpg"
+- "/src/images/DSC_3443.jpg"
 
 ---
-Plateau en chêne brut de 4 cm d’épaisseur, structure en médium laqué de 3,8 cm d’épaisseur, étagères réglables en hauteur.
+Planches de chêne brut juxtaposées, non rabotées de 3 cm d’épaisseur environ. Les hauteurs des étagères sont fixes. Structure en acier peint ou verni.

@@ -4,8 +4,6 @@ project_cat: Tables
 title: Rémalard
 gallery:
 - "/src/images/03-2.jpg"
-- "/src/images/05.jpg"
-- "/src/images/02-2.jpg"
 - "/src/images/01-2.jpg"
 - "/src/images/04-1.jpg"
 
