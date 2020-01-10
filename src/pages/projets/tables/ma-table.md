@@ -1,14 +1,11 @@
 ---
 template: projet
 project_cat: Tables
-title: Ma Table
+title: Bellême
 gallery:
-- "/src/images/03-2.jpg"
-- "/src/images/05.jpg"
-- "/src/images/02-2.jpg"
-- "/src/images/01-2.jpg"
-- "/src/images/04-1.jpg"
+- "/src/images/01037957.jpg"
+- "/src/images/01037953.jpg"
+- "/src/images/01037941.jpg"
 
 ---
-Table en acier avec 4 pieds sur roulettes (ou sans), elle reprend le design de la traditionnelle table de tapissier mais avec un plateau en acier.   
-Finition brut.
+Plateau en chêne brut d’environ 5 cm d’épaisseur, il est supporté par une structure en acier brut.
