@@ -79,7 +79,7 @@ export const pageQuery = graphql`
             title
             gallery {
               childImageSharp {
-                fluid {
+                fluid(maxWidth: 400, quality: 80) {
                   aspectRatio
                   src
                   srcSet
@@ -89,7 +89,7 @@ export const pageQuery = graphql`
             }
             thumbnail {
               childImageSharp {
-                fluid {
+                fluid(maxWidth: 400, quality: 80) {
                   aspectRatio
                   src
                   srcSet

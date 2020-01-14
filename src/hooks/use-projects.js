@@ -16,7 +16,7 @@ const useProjects = (cat) => {
               project_cat
               thumbnail {
                 childImageSharp {
-                  fluid {
+                  fluid(maxWidth: 400, quality: 80) {
                     aspectRatio
                     src
                     srcSet

@@ -13,7 +13,7 @@ const useCategories = (cat) => {
             frontmatter {
               gallery {
                 childImageSharp {
-                  fluid {
+                  fluid(maxWidth: 1600, quality: 80) {
                     aspectRatio
                     src
                     srcSet
@@ -23,7 +23,7 @@ const useCategories = (cat) => {
               }
               thumbnail {
                 childImageSharp {
-                  fluid {
+                  fluid(maxWidth: 400, quality: 80) {
                     aspectRatio
                     src
                     srcSet
