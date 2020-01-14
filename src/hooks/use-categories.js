@@ -21,6 +21,16 @@ const useCategories = (cat) => {
                   }
                 }
               }
+              thumbnail {
+                childImageSharp {
+                  fluid {
+                    aspectRatio
+                    src
+                    srcSet
+                    sizes
+                  }
+                }
+              }
             }
           }
         }
@@ -31,7 +41,7 @@ const useCategories = (cat) => {
 
   const resultCategories = data.allCats.group.map(category => {
       const randomProject = category.nodes[Math.floor(Math.random() * category.nodes.length)];
-      const randomImage = randomProject.frontmatter.gallery[Math.floor(Math.random() * randomProject.frontmatter.gallery.length)].childImageSharp.fluid;
+      const randomImage = randomProject.frontmatter.thumbnail ? randomProject.frontmatter.thumbnail.childImageSharp.fluid : randomProject.frontmatter.gallery[Math.floor(Math.random() * randomProject.frontmatter.gallery.length)].childImageSharp.fluid;
 
       return category = {
         slug : `/projets/${kebabCase(category.fieldValue)}/`,

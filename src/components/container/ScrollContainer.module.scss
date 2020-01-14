@@ -37,11 +37,11 @@
 
       &:not(:last-child) {
         @include responsive($tabletSmall) {
-          margin-right:120px;
+          margin-right: 120px;
         }
 
         :global(.Home__page) &, :global(.Projets__page) & {
-          margin-right:-10px;
+          margin-right: 60px;
         }
       }
 

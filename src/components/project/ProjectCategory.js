@@ -7,9 +7,12 @@ import s from './ProjectCategory.module.scss'
 
 export const ProjectCategory = ({category}) => {
 
+  let imageClass = "is--portrait";
+  if (category.randomImage.aspectRatio > 1) imageClass = "is--paysage";
+
   return (
 
-    <Link to={category.slug} className={`${s.CategoryPreview}`}>
+    <Link to={category.slug} className={`${s.CategoryPreview} ${imageClass}`}>
       <span className={s.CategoryPreview__title}>{category.title}</span>
       <div className="visual__container">
         <Img fluid={category.randomImage} />

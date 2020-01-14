@@ -23,7 +23,8 @@ export class Project extends React.Component {
       title : props.data.pageData.frontmatter.title,
       category : props.data.pageData.frontmatter.project_cat,
       html : props.data.pageData.html,
-      gallery : props.data.pageData.frontmatter.gallery
+      gallery : props.data.pageData.frontmatter.gallery,
+      thumbnail : props.data.pageData.frontmatter.thumbnail
     };
 
     this.state = {
@@ -111,13 +112,13 @@ export class Project extends React.Component {
         <ScrollContainer className={s.Project__scrollcontainer}>
           {this.data.gallery.map((image, index) => (
             <button className={s.Project__item} key={index} onClick={() => this.openModal(image)} aria-label="Agrandir">
-              <ProjectVisual img={image.childImageSharp.fluid} />
+              <ProjectVisual img={image.childImageSharp.thumbnail} />
             </button>
           ))}
         </ScrollContainer>
 
         <Modal isOpen={modalIsOpen} ref={this.myProjectModal} className={s.Project__fullView} onAfterOpen={() => this.afterOpenModal()} >
-          {modalIsOpen && (<Img fluid={selectedImage.childImageSharp.fluid} onClick={() => this.closeModal()}/>)}
+          {modalIsOpen && (<Img fluid={selectedImage.childImageSharp.full} onClick={() => this.closeModal()}/>)}
         </Modal>
 
       </article>
@@ -139,7 +140,13 @@ export const pageQuery = graphql`
         project_cat
         gallery {
           childImageSharp {
-            fluid(maxWidth: 1600, quality: 80) {
+            thumbnail: fluid(maxWidth: 400, quality: 80) {
+              aspectRatio
+              src
+              srcSet
+              sizes
+            }
+            full: fluid(maxWidth: 1600, quality: 80) {
               aspectRatio
               src
               srcSet

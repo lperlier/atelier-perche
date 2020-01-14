@@ -40,10 +40,12 @@ class Category extends React.Component {
 
               {this.edges.map(({ node }) => {
 
+                console.log(node.frontmatter);
+
                 const project = {
                   slug : node.fields.slug,
                   title : node.frontmatter.title,
-                  randomImage : node.frontmatter.gallery[Math.floor(Math.random()*node.frontmatter.gallery.length)].childImageSharp.fluid
+                  thumbnail : node.frontmatter.thumbnail ? node.frontmatter.thumbnail.childImageSharp.fluid : node.frontmatter.gallery[Math.floor(Math.random()*node.frontmatter.gallery.length)].childImageSharp.fluid
                 }
 
                 return (
@@ -76,6 +78,16 @@ export const pageQuery = graphql`
           frontmatter {
             title
             gallery {
+              childImageSharp {
+                fluid {
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }
+              }
+            }
+            thumbnail {
               childImageSharp {
                 fluid {
                   aspectRatio

@@ -16,10 +16,6 @@ export const Navbar = (props) => {
       <ul className={s.Nav__Main}>
         {menu.map((link, index) => {
 
-          if (index === 0 ) {
-            console.log(categories);
-          }
-
           return (
 
             <li key={link.id} className={ index === 0 ? `${s.Nav__item} has--childs` : s.Nav__item }>
@@ -34,7 +30,7 @@ export const Navbar = (props) => {
                           <Link to={category.slug} className={s.Nav__link} activeClassName={ s.Nav__link__Active } partiallyActive={true} onClick={props.onClick}>{category.title}</Link>
                         </li>
                       )
-                      
+
                   })}
                 </ul>
               }

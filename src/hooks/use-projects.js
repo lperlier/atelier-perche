@@ -14,7 +14,7 @@ const useProjects = (cat) => {
             frontmatter {
               title
               project_cat
-              gallery {
+              thumbnail {
                 childImageSharp {
                   fluid {
                     aspectRatio
@@ -44,7 +44,7 @@ const useProjects = (cat) => {
       title : project.node.frontmatter.title,
       category : project.node.frontmatter.project_cat,
       description : project.node.frontmatter.description,
-      randomImage : project.node.frontmatter.gallery[Math.floor(Math.random()*project.node.frontmatter.gallery.length)].childImageSharp.fluid,
+      thumbnail : project.node.frontmatter.thumbnail.childImageSharp.fluid,
       slug : project.node.fields.slug
   }));
 
