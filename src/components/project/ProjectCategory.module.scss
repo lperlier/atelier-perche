@@ -27,17 +27,21 @@
   }
 
   &__title {
+    display: block;
     font-size: 1.2rem;
     text-transform: uppercase;
     line-height: 1;
     color: $fontColor;
-    position: absolute;
-    top: 100%;
-    left: 0px;
-    right: 0px;
     margin-top: 10px;
     z-index: 10;
     font-weight: 500;
+
+    @include responsive($tabletSmall) {
+      position: absolute;
+      top: 100%;
+      left: 0px;
+      right: 0px;
+    }
   }
 
   :global(.visual__container) {

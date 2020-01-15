@@ -5,6 +5,7 @@
   position: relative;
   width:100%;
   display:block;
+  text-decoration: none;
 
   @include responsive($tabletSmall) {
     width:20vw;
@@ -57,14 +58,16 @@
   }
 
   &__header {
-    position: absolute;
-    z-index: 10;
-    top: 100%;
+    display: block;
     margin-top: 10px;
     right: 0;
     overflow: hidden;
+    text-align: right;
 
     @include responsive($tabletSmall) {
+      position: absolute;
+      z-index: 10;
+      top: 100%;
       transition: 1200ms $easeOutExpo;
     }
 

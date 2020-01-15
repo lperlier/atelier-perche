@@ -13,10 +13,10 @@ export const ProjectCategory = ({category}) => {
   return (
 
     <Link to={category.slug} className={`${s.CategoryPreview} ${imageClass}`}>
-      <span className={s.CategoryPreview__title}>{category.title}</span>
       <div className="visual__container">
         <Img fluid={category.randomImage} />
       </div>
+      <span className={s.CategoryPreview__title}>{category.title}</span>
     </Link>
 
   )

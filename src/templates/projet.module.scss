@@ -4,7 +4,7 @@
   position: relative;
 
   @include responsive($tabletSmall, max) {
-    padding: 140px 40px 40px;
+    padding: 140px 30px 40px;
   }
 
   &__header {

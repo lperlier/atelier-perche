@@ -9,6 +9,11 @@
     overflow-x: scroll;
   }
 
+  @include responsive($tabletSmall, max) {
+    overflow: visible!important;
+    padding-bottom: 20px;
+  }
+
   &__inner {
 
     @include responsive($tabletSmall) {
