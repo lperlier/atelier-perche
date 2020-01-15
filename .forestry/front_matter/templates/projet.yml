@@ -12,8 +12,7 @@ fields:
   type: file
   config:
     maxSize: 250
-  label: Thumbnail
-  description: Image de preview
+  label: Photo Principale
 - name: gallery
   type: image_gallery
   config: {}
