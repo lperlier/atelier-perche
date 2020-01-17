@@ -27,5 +27,73 @@ fields:
     label: Image
     description: Image de couverture
   label: Ameublement intérieur
+- name: bibliotheques
+  type: field_group
+  config: {}
+  fields:
+  - name: slug
+    type: text
+    config:
+      required: false
+    label: Slug
+    hidden: true
+    default: bibliotheques
+  - name: image
+    type: file
+    config:
+      maxSize: 250
+    label: Image
+  label: Bibliothèques
+- name: porte-revues
+  type: field_group
+  config: {}
+  fields:
+  - name: slug
+    type: text
+    config:
+      required: false
+    label: Slug
+    hidden: true
+    default: porte-revues
+  - name: image
+    type: file
+    config:
+      maxSize: 250
+    label: Image
+  label: Porte-revues
+- name: tables
+  type: field_group
+  config: {}
+  fields:
+  - name: slug
+    type: text
+    config:
+      required: false
+    label: Slug
+    hidden: true
+    default: tables
+  - name: image
+    type: file
+    config:
+      maxSize: 250
+    label: Image
+  label: Tables
+- name: tables-basses
+  type: field_group
+  config: {}
+  fields:
+  - name: slug
+    type: text
+    config:
+      required: false
+    label: Slug
+    hidden: true
+    default: tables-basses
+  - name: image
+    type: file
+    config:
+      maxSize: 250
+    label: Image
+  label: Tables basses
 pages:
 - src/pages/projets.md
