@@ -45,7 +45,7 @@ fields:
     label: Image
   label: Bibliothèques
   description: Image de couverture
-- name: porte-revues
+- name: porte_revues
   type: field_group
   config: {}
   fields:
@@ -81,7 +81,7 @@ fields:
     label: Image
   label: Tables
   description: Image de couverture
-- name: tables-basses
+- name: tables_basses
   type: field_group
   config: {}
   fields:
