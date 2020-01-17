@@ -1,4 +1,5 @@
 ---
-title : Projets
-template : projets
+title: Projets
+template: projets
+
 ---

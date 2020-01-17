@@ -9,3 +9,5 @@ fields:
   label: Template
   hidden: true
   default: projets
+pages:
+- src/pages/projets.md
