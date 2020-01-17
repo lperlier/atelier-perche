@@ -25,8 +25,8 @@ fields:
     config:
       maxSize: 250
     label: Image
-    description: Image de couverture
   label: Ameublement intérieur
+  description: Image de couverture
 - name: bibliotheques
   type: field_group
   config: {}
@@ -44,6 +44,7 @@ fields:
       maxSize: 250
     label: Image
   label: Bibliothèques
+  description: Image de couverture
 - name: porte-revues
   type: field_group
   config: {}
@@ -61,6 +62,7 @@ fields:
       maxSize: 250
     label: Image
   label: Porte-revues
+  description: Image de couverture
 - name: tables
   type: field_group
   config: {}
@@ -78,6 +80,7 @@ fields:
       maxSize: 250
     label: Image
   label: Tables
+  description: Image de couverture
 - name: tables-basses
   type: field_group
   config: {}
@@ -95,5 +98,6 @@ fields:
       maxSize: 250
     label: Image
   label: Tables basses
+  description: Image de couverture
 pages:
 - src/pages/projets.md
