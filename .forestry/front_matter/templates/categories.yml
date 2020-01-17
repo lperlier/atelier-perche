@@ -9,5 +9,23 @@ fields:
   label: Template
   hidden: true
   default: projets
+- name: ameublement_interieur
+  type: field_group
+  config: {}
+  fields:
+  - name: slug
+    type: text
+    config:
+      required: false
+    label: Slug
+    default: amenagements-interieur
+    hidden: true
+  - name: image
+    type: file
+    config:
+      maxSize: 250
+    label: Image
+    description: Image de couverture
+  label: Ameublement intérieur
 pages:
 - src/pages/projets.md
