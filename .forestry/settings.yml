@@ -7,6 +7,10 @@ sections:
 - type: heading
   label: Pages
 - type: document
+  path: pages/projets
+  label: Categories
+  match: "**/*"
+- type: document
   path: src/pages/contact.md
   label: À propos
 - type: document
