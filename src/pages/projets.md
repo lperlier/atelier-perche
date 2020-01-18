@@ -27,5 +27,9 @@ tables_basses:
   slug: ''
   title: Tables basses
   image: "/src/images/projet_01.jpg"
+amenagements_interieur:
+  slug: ''
+  title: Aménagements intérieur
+  image: "/src/images/DressingFaceCrop.jpg"
 
 ---
