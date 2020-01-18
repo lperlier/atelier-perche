@@ -9,7 +9,7 @@ fields:
   label: Template
   hidden: true
   default: projets
-- name: amenagements_interieur
+- name: amenagements_interieurs
   type: field_group
   config: {}
   fields:
@@ -18,7 +18,7 @@ fields:
     config:
       required: false
     label: Slug
-    default: amenagements-interieur
+    default: amenagements-interieurs
     hidden: true
   - name: title
     type: text
@@ -30,7 +30,7 @@ fields:
     config:
       maxSize: 250
     label: Image
-  label: Aménagements intérieur
+  label: Aménagements intérieurs
 - name: bibliotheques
   type: field_group
   config: {}

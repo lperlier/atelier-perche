@@ -1,35 +1,25 @@
 ---
 title: Projets
 template: projets
-ameublement_interieur:
-  slug: ''
+amenagements_interieurs:
+  slug: 'amenagements-interieurs'
+  title: Aménagements intérieurs
   image: "/src/images/DressingFaceCrop.jpg"
-  title: Ameublement intérieur
 bibliotheques:
-  slug: ''
-  image: "/src/images/DSC_3496.jpg"
+  slug: 'bibliotheques'
   title: Bibliothèques
-porte-revues:
-  slug: ''
-  image: "/src/images/04.jpg"
-tables:
-  slug: ''
-  image: "/src/images/01037941.jpg"
-  title: Tables
-tables-basses:
-  slug: ''
-  image: "/src/images/projet_01.jpg"
+  image: "/src/images/DSC_3496.jpg"
 porte_revues:
-  slug: ''
+  slug: 'porte-revues'
   title: Porte-revues
   image: "/src/images/04.jpg"
+tables:
+  slug: 'tables'
+  title: Tables
+  image: "/src/images/01037941.jpg"
 tables_basses:
-  slug: ''
+  slug: 'tables-basses'
   title: Tables basses
   image: "/src/images/projet_01.jpg"
-amenagements_interieur:
-  slug: ''
-  title: Aménagements intérieur
-  image: "/src/images/DressingFaceCrop.jpg"
 
 ---

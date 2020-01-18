@@ -44,8 +44,9 @@ const useCategories = (cat) => {
         frontmatter {
             title
             template
-            ameublement_interieur {
+            amenagements_interieurs {
               slug
+              title
               image {
                 childImageSharp {
                   fluid {
@@ -59,6 +60,7 @@ const useCategories = (cat) => {
             }
             bibliotheques {
               slug
+              title
               image {
                 childImageSharp {
                   fluid {
@@ -72,6 +74,7 @@ const useCategories = (cat) => {
             }
             porte_revues {
               slug
+              title
               image {
                 childImageSharp {
                   fluid {
@@ -85,6 +88,7 @@ const useCategories = (cat) => {
             }
             tables {
               slug
+              title
               image {
                 childImageSharp {
                   fluid {
@@ -98,6 +102,7 @@ const useCategories = (cat) => {
             }
             tables_basses {
               slug
+              title
               image {
                 childImageSharp {
                   fluid {
@@ -116,23 +121,28 @@ const useCategories = (cat) => {
 
   const categories = [
     {
-      slug : `/projets/${data.markdownRemark.frontmatter.ameublement_interieur.slug}`,
-      image : data.markdownRemark.frontmatter.ameublement_interieur.image.childImageSharp.fluid
+      slug : `/projets/${data.markdownRemark.frontmatter.amenagements_interieurs.slug}`,
+      title : data.markdownRemark.frontmatter.amenagements_interieurs.title,
+      image : data.markdownRemark.frontmatter.amenagements_interieurs.image.childImageSharp.fluid
     },
     {
       slug : `/projets/${data.markdownRemark.frontmatter.bibliotheques.slug}`,
+      title : data.markdownRemark.frontmatter.bibliotheques.title,
       image : data.markdownRemark.frontmatter.bibliotheques.image.childImageSharp.fluid
     },
     {
       slug : `/projets/${data.markdownRemark.frontmatter.porte_revues.slug}`,
+      title : data.markdownRemark.frontmatter.porte_revues.title,
       image : data.markdownRemark.frontmatter.porte_revues.image.childImageSharp.fluid
     },
     {
       slug : `/projets/${data.markdownRemark.frontmatter.tables.slug}`,
+      title : data.markdownRemark.frontmatter.tables.title,
       image : data.markdownRemark.frontmatter.tables.image.childImageSharp.fluid
     },
     {
       slug : `/projets/${data.markdownRemark.frontmatter.tables_basses.slug}`,
+      title : data.markdownRemark.frontmatter.tables_basses.title,
       image : data.markdownRemark.frontmatter.tables_basses.image.childImageSharp.fluid
     }
   ]
