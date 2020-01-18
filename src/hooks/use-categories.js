@@ -3,41 +3,6 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const useCategories = (cat) => {
 
-  /*const data = useStaticQuery( graphql`
-    query {
-      allCats:allMarkdownRemark(limit: 2000) {
-        group(field: frontmatter___project_cat) {
-          fieldValue
-          totalCount
-          nodes {
-            frontmatter {
-              gallery {
-                childImageSharp {
-                  fluid(maxWidth: 1600, quality: 80) {
-                    aspectRatio
-                    src
-                    srcSet
-                    sizes
-                  }
-                }
-              }
-              thumbnail {
-                childImageSharp {
-                  fluid(maxWidth: 400, quality: 80) {
-                    aspectRatio
-                    src
-                    srcSet
-                    sizes
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `);*/
-
   const data = useStaticQuery( graphql`
     query{
       markdownRemark(frontmatter: {template: {eq: "projets"}}) {
@@ -49,7 +14,7 @@ const useCategories = (cat) => {
               title
               image {
                 childImageSharp {
-                  fluid {
+                  fluid(maxWidth: 600, quality: 80) {
                     aspectRatio
                     src
                     srcSet
@@ -63,7 +28,7 @@ const useCategories = (cat) => {
               title
               image {
                 childImageSharp {
-                  fluid {
+                  fluid(maxWidth: 600, quality: 80) {
                     aspectRatio
                     src
                     srcSet
@@ -77,7 +42,7 @@ const useCategories = (cat) => {
               title
               image {
                 childImageSharp {
-                  fluid {
+                  fluid(maxWidth: 600, quality: 80) {
                     aspectRatio
                     src
                     srcSet
@@ -91,7 +56,7 @@ const useCategories = (cat) => {
               title
               image {
                 childImageSharp {
-                  fluid {
+                  fluid(maxWidth: 600, quality: 80) {
                     aspectRatio
                     src
                     srcSet
@@ -105,7 +70,7 @@ const useCategories = (cat) => {
               title
               image {
                 childImageSharp {
-                  fluid {
+                  fluid(maxWidth: 600, quality: 80) {
                     aspectRatio
                     src
                     srcSet
