@@ -52,6 +52,11 @@ sections:
   match: "**/*"
   templates:
   - projet-amenagements
+- type: heading
+  label: SEO
+- type: document
+  path: site-config.json
+  label: SEO
 upload_dir: src/images
 public_path: "/src/images"
 front_matter_path: ''
