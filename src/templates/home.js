@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet';
 
 import { ScrollContainer } from 'components/container/ScrollContainer'
 import { ProjectCategory } from 'components/project/ProjectCategory'

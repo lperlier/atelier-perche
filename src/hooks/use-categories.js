@@ -112,8 +112,6 @@ const useCategories = (cat) => {
     }
   ]
 
-  console.log(categories);
-
   return categories;
 
 };
