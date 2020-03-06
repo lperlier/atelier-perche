@@ -4,6 +4,10 @@ auto_deploy: false
 admin_path: "/static/admin"
 webhook_url: 
 sections:
+- type: document
+  path: site-config.json
+  label: SEO
+  match: "**/*"
 - type: heading
   label: Pages
 - type: document
