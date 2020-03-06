@@ -13,7 +13,7 @@ function Projets(props) {
     return (
 
       <main className="Projets__page">
-        <Helmet title="Accueil" />
+        <Helmet title="Projets" />
         <ScrollContainer>
 
           {categories.map(category => (

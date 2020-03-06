@@ -13,7 +13,6 @@ function Homepage(props) {
     return (
 
       <main className="Home__page">
-        <Helmet title="Accueil" />
         <ScrollContainer>
 
           {categories.map(category => (
