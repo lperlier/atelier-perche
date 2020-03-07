@@ -62,6 +62,7 @@ export class About extends React.Component {
         <Helmet title={this.data.title} />
 
         <PageContent>
+          <h1 className="sr-only">{this.data.title}</h1>
           <Row>
             <Col className={s.Contact__visual} ref={this.myPageVisual}>
               <div className="mask">

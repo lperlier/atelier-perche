@@ -13,8 +13,8 @@ export const Socials = (props) => {
   return (
 
     <div className={s.Socials}>
-      <a href={socials.facebook} rel="noopener noreferrer" target="_blank"><Facebook /></a>
-      <a href={socials.instagram} rel="noopener noreferrer" target="_blank"><Instagram /></a>
+      <a href={socials.facebook} rel="noopener" target="_blank"><Facebook /></a>
+      <a href={socials.instagram} rel="noopener" target="_blank"><Instagram /></a>
     </div>
 
   )

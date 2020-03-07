@@ -16,7 +16,7 @@ export const ProjectCategory = ({category}) => {
       <div className="visual__container">
         <Img fluid={category.image} />
       </div>
-      <span className={s.CategoryPreview__title}>{category.title}</span>
+      <h2 className={s.CategoryPreview__title}>{category.title}</h2>
     </Link>
 
   )

@@ -57,6 +57,7 @@ export class Catalog extends React.Component {
         <Helmet title={this.data.title} />
 
         <PageContent>
+          <h1 className="sr-only">{this.data.title}</h1>
           <a className={s.Catalogue__link} href={this.data.catalogLink} ref={this.myCatalogLink} rel="noopener noreferrer" target="_blank">
             <Img fluid={this.data.catalogImage} />
             <span className={s.Link__icon}>
@@ -65,6 +66,7 @@ export class Catalog extends React.Component {
                 <path d="M11.7,21.76a3.11,3.11,0,0,1,4.41,0l3.79,3.8V3.11a3.12,3.12,0,0,1,6.23,0V25.56l3.79-3.8a3.11,3.11,0,1,1,4.4,4.4l-9.11,9.11a3.07,3.07,0,0,1-2.2.91,3.1,3.1,0,0,1-2.2-.91h0L11.7,26.16A3.12,3.12,0,0,1,11.7,21.76Z"/>
               </svg>
             </span>
+            <span className="sr-only">Télécharger notre catalogue</span>
           </a>
         </PageContent>
       </main>

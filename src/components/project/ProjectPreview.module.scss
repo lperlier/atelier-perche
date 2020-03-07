@@ -21,7 +21,7 @@
 
       .ProjectPreview__header {
         transform:translateX(0%);
-        h3 {
+        h2 {
           transform:translateX(0%);
         }
       }
@@ -71,7 +71,7 @@
       transition: 1200ms $easeOutExpo;
     }
 
-    h3 {
+    h2 {
       margin: 0;
       color: $fontColor;
       text-transform: uppercase;

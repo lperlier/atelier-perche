@@ -7,6 +7,8 @@ import { Link, graphql } from 'gatsby'
 import { ScrollContainer } from 'components/container/ScrollContainer'
 import { ProjectPreview } from 'components/project/ProjectPreview'
 
+import s from './category.module.scss'
+
 class Category extends React.Component {
 
     constructor(props) {
@@ -15,6 +17,7 @@ class Category extends React.Component {
       this.edges = this.props.data.allMarkdownRemark.edges;
 
       this.myBackLink = React.createRef();
+      this.myCatTitle = React.createRef();
       this.myScrollContainer = React.createRef();
 
     }
@@ -24,6 +27,7 @@ class Category extends React.Component {
       if (process.env.NODE_ENV === "development") console.log('Page Projets');
 
       TweenMax.fromTo(this.myBackLink.current, 1.4, { x: -40, opacity:0}, { x:0, opacity:1, ease: Expo.easeOut, clearProps:"all"}, 0.5);
+      TweenMax.fromTo(this.myCatTitle.current, 1.4, { x: -40, opacity:0}, { x:0, opacity:1, ease: Expo.easeOut, clearProps:"all"}, 1);
 
     }
 
@@ -31,10 +35,11 @@ class Category extends React.Component {
 
       return(
 
-        <main className="Category__Page">
+        <main className={s.Category__page} >
           <Helmet title={this.category} />
 
           <Link to="/projets" className="BackLink" ref={this.myBackLink}>Retour</Link>
+          <h1 ref={this.myCatTitle}>{this.category}</h1>
 
           <ScrollContainer ref={this.myScrollContainer}>
 

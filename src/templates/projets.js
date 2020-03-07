@@ -14,6 +14,7 @@ function Projets(props) {
 
       <main className="Projets__page">
         <Helmet title="Projets" />
+        <h1 className="sr-only">Projets</h1>
         <ScrollContainer>
 
           {categories.map(category => (

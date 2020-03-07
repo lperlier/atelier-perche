@@ -17,7 +17,7 @@ export const ProjectPreview = ({project}) => {
         <Img fluid={project.thumbnail} />
       </div>
       <div className={s.ProjectPreview__header}>
-        <h3>{project.title}</h3>
+        <h2>{project.title}</h2>
       </div>
     </Link>
 

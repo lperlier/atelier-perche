@@ -4,6 +4,7 @@ const config = require('./site-config.json')
 module.exports = {
   pathPrefix: '/atelier-perche',
   siteMetadata: {
+    siteUrl: `https://atelier-perche.com/`,
     title: config.title,
     description: config.description
   },
@@ -45,6 +46,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

@@ -141,6 +141,7 @@
 
        @include responsive($menuBreakpoint, max) {
          font-size: 1.6rem;
+         color: $white;
        }
 
        &:after {

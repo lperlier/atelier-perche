@@ -12,6 +12,7 @@ function Homepage(props) {
     return (
 
       <main className="Home__page">
+        <h1 className="sr-only">Accueil</h1>
         <ScrollContainer>
 
           {categories.map(category => (
