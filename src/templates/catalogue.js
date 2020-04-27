@@ -54,7 +54,10 @@ export class Catalog extends React.Component {
 
       <main className={s.Catalogue__page} ref={this.myCataloguePage}>
 
-        <Helmet title={this.data.title} />
+        <Helmet>
+          <title>{this.data.title}</title>
+          <meta name="description" content="Découvrez notre catalogue, pour en savoir plus sur nos valeurs (responsablité, simplicité, innovation) et notre savoir faire dans la conception et la réalisation de nos meubles." />
+        </Helmet>
 
         <PageContent>
           <h1 className="sr-only">{this.data.title}</h1>

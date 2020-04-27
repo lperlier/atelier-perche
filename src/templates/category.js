@@ -36,7 +36,10 @@ class Category extends React.Component {
       return(
 
         <main className={s.Category__page} >
-          <Helmet title={this.category} />
+          <Helmet>
+            <title>{this.category}</title>=
+            <meta name="description" content={`Découvrez nos ${this.category}`} />
+          </Helmet>
 
           <Link to="/projets" className="BackLink" ref={this.myBackLink}>Retour</Link>
           <h1 ref={this.myCatTitle}>{this.category}</h1>

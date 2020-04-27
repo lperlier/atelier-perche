@@ -100,13 +100,17 @@ export class Project extends React.Component {
 
       <article className={s.Project}>
 
-        <Helmet title={this.data.title} />
+        <Helmet>
+          <title>{this.data.title}</title>
+          <meta name="description" content={`${this.data.title}, ${this.data.html.replace(/(<p>|<\/p>)/g, '')}`} />
+        </Helmet>
 
         <Link to={`/projets/${kebabCase(this.data.category)}/`} className="BackLink" ref={this.myBackLink}>Retour</Link>
 
         <div className={s.Project__header} ref={this.myProjectHeader}>
           <h1>{this.data.title}</h1>
           <div className={s.Project__description} dangerouslySetInnerHTML={{ __html: this.data.html }} />
+          <p class="sr-only">Nous privilégions les circuits courts et utilisons des bois abattus en France (Forêts du Perche, pays de Loire, Bourgogne). Nous travaillons avec les acteurs de la filière qui exploitent durablement les forêts françaises. Le principal bois utilisé est le chêne, mais nous pouvons sur demande travailler toutes autres essences (frêne, hêtre, châtaigner, noyer…)</p>
         </div>
 
         <ScrollContainer className={s.Project__scrollcontainer}>

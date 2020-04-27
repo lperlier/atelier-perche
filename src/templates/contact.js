@@ -71,6 +71,7 @@ export class About extends React.Component {
             </Col>
             <Col className={s.Contact__content} ref={this.myPageContent}>
               <YSWYWContent html={this.data.html}/>
+              <p class="sr-only">Situé à 2 heures de Paris, en plein cœur du Perche, c’est dans un écrin de verdure que sont soigneusement confectionnées chacune de nos réalisations.</p>
               <div className={s.Contact__address}>
                 <address dangerouslySetInnerHTML={{ __html: this.data.adresse }} />
                 <ul className={s.Contact__emails}>
