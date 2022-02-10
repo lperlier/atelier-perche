@@ -33,7 +33,7 @@
     "horizontal-scroll": "^1.1.0",
     "locomotive-scroll": "^3.2.4",
     "lodash": "^4.17.15",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
